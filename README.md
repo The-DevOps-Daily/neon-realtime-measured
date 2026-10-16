@@ -84,7 +84,7 @@ Every run directory has a `meta.json` stamped with a hash of the code that recor
 
 All on Lakebase Postgres 18 in `aws-eu-central-1`, from one client with a 32 ms round trip (`SELECT 1`, median of per-run p50s). Numbers are from the files named; the write-up has the detail.
 
-**Latency** (`results/latency/report.json`, 18 runs, 48,600 writes, none missing, no consistency mismatches; the checks cover row identity, row counts, removals and aggregate totals, not every column value). Write issued to update applied, p50 / p99 in ms:
+**Latency** (`results/latency/report.json`, 18 runs, 48,600 writes, none missing, no consistency mismatches; the checks cover the stamped rows each update adds, removal counts, full-result sizes and the aggregate's total order count, not deleted-row or seed-row identities, per-status counts, revenue or other column values). Write issued to update applied, p50 / p99 in ms:
 
 | Shape | 1 write/s | 10 writes/s | 100 writes/s |
 |---|---|---|---|
@@ -92,7 +92,7 @@ All on Lakebase Postgres 18 in `aws-eu-central-1`, from one client with a 32 ms 
 | join (orders, customers, store_members) | 56.2 / 90.3 | 53.6 / 94.4 | 60.4 / 2,083 |
 | aggregate | 47.2 / 63.0 | 42.4 / 119.7 | 40.7 / 647.9 |
 
-For the join at 100 writes/s, the SDK on this client is the main limit: a separate benchmark at 20 updates/s measured 9.4 ms of CPU per 200-row result (`results/sdk-cost/`), about 94% of a core if that held at 100/s. Two complete raw-protocol runs on the same workload held p50 44 to 49 ms and p99 73 to 114 ms; a third had 220 writes delayed by up to 957 ms in its first five seconds, with the client idle, before a session loss ended it (`results/diagnostic/`). Eleven `backend_session_lost` errors in 59 minutes of subscriptions account for most of the one-second maximums; the SDK recovered from each in 0.95 to 1.51 s.
+For the join at 100 writes/s, the SDK on this client is the main limit: a separate benchmark at 20 updates/s measured 9.4 ms of CPU per 200-row result (`results/sdk-cost/`), about 94% of a core if that held at 100/s. Two complete raw-protocol runs on the same workload held p50 44 to 49 ms and p99 73 to 114 ms; a third had 220 writes delayed by up to 957 ms in its first five seconds, with no recorded client stall overlapping them, before a session loss ended it (`results/diagnostic/`). Eleven `backend_session_lost` errors in 59 minutes of subscriptions account for most of the one-second maximums; the SDK recovered from each in 0.95 to 1.51 s.
 
 **Full results on every write** (`results/explore/`), in the forms we tested. A single-table filter and a join to `store_members` pinned to one row by the `WHERE` clause got incremental changes. Joins to `customers`, `EXISTS`, `IN (SELECT ...)`, `GROUP BY`, `count(*)`, `DISTINCT`, `ORDER BY` with or without `LIMIT`, and `LIMIT` alone were re-sent in full on every write. Bytes per write grow at about 134 per row for the join's columns (`results/size-sweep/`).
 
@@ -108,9 +108,9 @@ For the join at 100 writes/s, the SDK on this client is the main limit: a separa
 
 **The egress meter** (`results/egress-meter-*.json`, `scripts/egress-meter.ts`). In the three full hours from 15:00 to 18:00 UTC, the bench recorders received at least 862 MB of Realtime message payload, while the consumption API reported 16.2 MB of public network transfer for the project.
 
-**Sealed queries** (`results/tamper/`). 14 of 14 outcomes as expected, in the first run and in a stricter rerun (exact error codes for every attempt, and writes during the control, the stolen-query case and the renewal attack so incremental changes are checked for leaks too). No tampered, forged, expired or cross-branch attempt disclosed a victim row. A copied valid one works until it expires (60 s), as documented. The self-test swaps one attack for the real victim capability and must fail.
+**Sealed queries** (`results/tamper/`). 14 of 14 outcomes as expected, in the first run and in a stricter rerun (exact error codes for every attempt, and writes during the control, the stolen-query case and the renewal attack so incremental changes are checked for leaks too). No tampered, forged or cross-branch attempt disclosed a victim row, and the expired capability was refused. A copied valid one works until it expires (60 s), as documented. The self-test swaps one attack for the real victim capability and must fail.
 
-**Scoping** (`results/scoping/`). With the membership join in the query, a removed member's result was empty 8 ms after the removal was acknowledged (one test, 5 ms polling). With the check only at seal time, new orders kept reaching them for 56 s.
+**Scoping** (`results/scoping/`, recorded with the API's membership lookup on seal turned on, as `scripts/scoping.ts` still sets it). With the membership join in the query, a removed member's result was empty 8 ms after the removal was acknowledged (one test, 5 ms polling). With the check only at seal time, new orders kept reaching them for 56 s.
 
 ## Notes on the recordings
 
