@@ -1,0 +1,138 @@
+{
+  "results/latency": {
+    "subscription_minutes": 59.23,
+    "events": [
+      {
+        "at": "2026-10-16T17:18:42.341Z",
+        "run": "plain-1ps-w200-A-2026-10-16T17-15-34",
+        "type": "connection_error",
+        "code": "backend_session_lost"
+      },
+      {
+        "at": "2026-10-16T17:33:42.561Z",
+        "run": "plain-10ps-w200-A-2026-10-16T17-31-47",
+        "type": "connection_error",
+        "code": "backend_session_lost"
+      },
+      {
+        "at": "2026-10-16T17:39:42.644Z",
+        "run": "aggregate-10ps-w200-A-2026-10-16T17-38-37",
+        "type": "connection_error",
+        "code": "backend_session_lost"
+      },
+      {
+        "at": "2026-10-16T17:41:42.668Z",
+        "run": "aggregate-10ps-w200-A-2026-10-16T17-38-37",
+        "type": "connection_error",
+        "code": "backend_session_lost"
+      },
+      {
+        "at": "2026-10-16T17:45:42.746Z",
+        "run": "aggregate-100ps-w200-A-2026-10-16T17-44-52",
+        "type": "connection_error",
+        "code": "backend_session_lost"
+      },
+      {
+        "at": "2026-10-16T17:53:42.835Z",
+        "run": "plain-1ps-w200-B-2026-10-16T17-53-04",
+        "type": "connection_error",
+        "code": "backend_session_lost"
+      },
+      {
+        "at": "2026-10-16T18:05:42.984Z",
+        "run": "aggregate-10ps-w200-B-2026-10-16T18-03-53",
+        "type": "connection_error",
+        "code": "backend_session_lost"
+      },
+      {
+        "at": "2026-10-16T18:08:43.022Z",
+        "run": "plain-10ps-w200-B-2026-10-16T18-07-17",
+        "type": "connection_error",
+        "code": "backend_session_lost"
+      },
+      {
+        "at": "2026-10-16T18:11:43.070Z",
+        "run": "join-10ps-w200-B-2026-10-16T18-10-42",
+        "type": "connection_error",
+        "code": "backend_session_lost"
+      },
+      {
+        "at": "2026-10-16T18:13:43.106Z",
+        "run": "join-10ps-w200-B-2026-10-16T18-10-42",
+        "type": "connection_error",
+        "code": "backend_session_lost"
+      },
+      {
+        "at": "2026-10-16T18:17:43.178Z",
+        "run": "join-100ps-w200-B-2026-10-16T18-16-57",
+        "type": "connection_error",
+        "code": "backend_session_lost"
+      }
+    ]
+  },
+  "results/latency-v1": {
+    "subscription_minutes": 89.42,
+    "events": [
+      {
+        "at": "2026-10-16T15:35:35.811Z",
+        "run": "plain-10ps-w200-A-2026-10-16T15-33-00",
+        "type": "connection_error",
+        "code": "backend_session_lost"
+      },
+      {
+        "at": "2026-10-16T15:46:05.689Z",
+        "run": "join-10ps-w200-A-2026-10-16T15-43-46",
+        "type": "connection_error",
+        "code": "backend_session_lost"
+      },
+      {
+        "at": "2026-10-16T15:50:05.737Z",
+        "run": "aggregate-10ps-w200-A-2026-10-16T15-47-11",
+        "type": "connection_error",
+        "code": "backend_session_lost"
+      },
+      {
+        "at": "2026-10-16T15:55:05.820Z",
+        "run": "aggregate-1ps-w200-B-2026-10-16T15-54-51",
+        "type": "connection_error",
+        "code": "backend_session_lost"
+      },
+      {
+        "at": "2026-10-16T16:01:05.911Z",
+        "run": "aggregate-1ps-w200-B-2026-10-16T15-54-51",
+        "type": "connection_error",
+        "code": "backend_session_lost"
+      },
+      {
+        "at": "2026-10-16T16:12:06.046Z",
+        "run": "plain-1ps-w200-B-2026-10-16T16-05-15",
+        "type": "connection_error",
+        "code": "backend_session_lost"
+      },
+      {
+        "at": "2026-10-16T16:42:41.799Z",
+        "run": "aggregate-10ps-w200-B-2026-10-16T16-40-22",
+        "type": "connection_error",
+        "code": "backend_session_lost"
+      },
+      {
+        "at": "2026-10-16T16:48:41.822Z",
+        "run": "join-10ps-w200-B-2026-10-16T16-47-13",
+        "type": "connection_error",
+        "code": "backend_session_lost"
+      },
+      {
+        "at": "2026-10-16T16:53:41.902Z",
+        "run": "join-100ps-w200-B-2026-10-16T16-53-31",
+        "type": "connection_error",
+        "code": "backend_session_lost"
+      },
+      {
+        "at": "2026-10-16T16:54:46.048Z",
+        "run": "join-100ps-w200-B-2026-10-16T16-53-31",
+        "type": "connection_error",
+        "code": "heartbeat_timeout"
+      }
+    ]
+  }
+}

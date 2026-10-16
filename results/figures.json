@@ -3,7 +3,7 @@
     "type": "line",
     "title": "Write issued to update applied, p50",
     "unit": "ms",
-    "caption": "Neon Realtime beta, aws-eu-central-1, client about 35 ms away. Each point pools two runs: 600 writes at 1/s, 3,600 at 10/s, 12,000 at 100/s. The live result is held at 200 rows. Dashed: how long the write itself took to be acknowledged, all shapes.",
+    "caption": "Neon Realtime beta, aws-eu-central-1, client about 32 ms away. Each point pools two runs: 600 writes at 1/s, 3,600 at 10/s, 12,000 at 100/s. The live result is held at 200 rows. Dashed: how long the write itself took to be acknowledged, all shapes.",
     "x": [
       "1 write/s",
       "10 writes/s",

@@ -63,6 +63,7 @@ The board's sign-in goes through its own API (`POST /api/session`), which signs 
 | `scripts/scoping.ts` | Per-user scoping without RLS, through the board API with real Neon Auth users | `results/scoping/` |
 | `scripts/board-check.ts` | The board end to end through its API and the SDK, without a browser | `results/board/` |
 | `scripts/run-experiments.sh` | Everything after the matrix, one at a time, scale-to-zero last | `results/run-experiments.log` |
+| `scripts/session-events.ts`, `egress-meter.ts` | Server-side errors the recorders saw; their received bytes per hour against Neon's consumption API | `results/` |
 
 ### How latency is measured
 
@@ -98,6 +99,10 @@ The join at 100 writes/s is limited by the SDK on this client (9.4 ms of CPU per
 **Scale to zero** (`results/scale-to-zero/`). With one subscription held open and renewed, the compute suspended after 75 s and stayed suspended; a write then woke it and reached the open subscription 1.12 s after it was issued. Starting a live query from a suspended compute woke it. In that file, `first_result_while_active_ms` is misnamed: the compute had just suspended when that subscription started, so it was a cold start too.
 
 **Primary impact** (`results/primary-impact/2026-10-16T19-07-34/`). 100 live queries on and off in alternating blocks, 20 writes/s: the write's execution time on the primary stayed at 0.15 to 0.17 ms in every block.
+
+**Session losses** (`results/session-events.json`, `scripts/session-events.ts`). 11 server-side `backend_session_lost` errors in 59 subscription minutes of the matrix, and 9 more (plus one heartbeat timeout while the client was swapping) in the superseded first recording.
+
+**The egress meter** (`results/egress-meter-*.json`, `scripts/egress-meter.ts`). In the three full hours from 15:00 to 18:00 UTC, the bench recorders received at least 862 MB of Realtime message payload, while the consumption API reported 16.2 MB of public network transfer for the project.
 
 **Sealed queries** (`results/tamper/`). 14 of 14 outcomes as expected; no tampered, forged, expired or cross-branch capability returned a row. A copied valid one works until it expires (60 s), as documented.
 

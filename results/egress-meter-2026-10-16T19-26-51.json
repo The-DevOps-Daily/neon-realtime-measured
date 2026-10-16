@@ -1,0 +1,112 @@
+{
+  "subscriber_logs": 50,
+  "note": "payload bytes of WebSocket messages received by the bench recorders only (results/**/subscriber.jsonl), excluding framing and TLS. The explore, CLI, reconnect, scoping, board, primary-impact and scale-to-zero subscriptions keep no wire log and are not counted, so an hour with 0 here is unrecorded, not idle",
+  "rows": [
+    {
+      "hour": "2026-10-16T14:00:00Z",
+      "realtime_payload_received_bytes": 4295208,
+      "neon_public_network_transfer_bytes": 74673
+    },
+    {
+      "hour": "2026-10-16T15:00:00Z",
+      "realtime_payload_received_bytes": 268641486,
+      "neon_public_network_transfer_bytes": 2530385
+    },
+    {
+      "hour": "2026-10-16T16:00:00Z",
+      "realtime_payload_received_bytes": 143812926,
+      "neon_public_network_transfer_bytes": 4477941
+    },
+    {
+      "hour": "2026-10-16T17:00:00Z",
+      "realtime_payload_received_bytes": 449442120,
+      "neon_public_network_transfer_bytes": 9206457
+    },
+    {
+      "hour": "2026-10-16T18:00:00Z",
+      "realtime_payload_received_bytes": 444195152,
+      "neon_public_network_transfer_bytes": 9136352
+    },
+    {
+      "hour": "2026-10-16T19:00:00Z",
+      "realtime_payload_received_bytes": 0,
+      "neon_public_network_transfer_bytes": 1678117
+    }
+  ],
+  "api": {
+    "projects": [
+      {
+        "project_id": "purple-term-17791629",
+        "periods": [
+          {
+            "period_id": "6d08b7af-0d2d-4ba5-8bcd-655ee724645c",
+            "period_plan": "scale",
+            "period_start": "2026-10-01T00:00:00Z",
+            "consumption": [
+              {
+                "timeframe_start": "2026-10-16T14:00:00Z",
+                "timeframe_end": "2026-10-16T15:00:00Z",
+                "metrics": [
+                  {
+                    "metric_name": "public_network_transfer_bytes",
+                    "value": 74673
+                  }
+                ]
+              },
+              {
+                "timeframe_start": "2026-10-16T15:00:00Z",
+                "timeframe_end": "2026-10-16T16:00:00Z",
+                "metrics": [
+                  {
+                    "metric_name": "public_network_transfer_bytes",
+                    "value": 2530385
+                  }
+                ]
+              },
+              {
+                "timeframe_start": "2026-10-16T16:00:00Z",
+                "timeframe_end": "2026-10-16T17:00:00Z",
+                "metrics": [
+                  {
+                    "metric_name": "public_network_transfer_bytes",
+                    "value": 4477941
+                  }
+                ]
+              },
+              {
+                "timeframe_start": "2026-10-16T17:00:00Z",
+                "timeframe_end": "2026-10-16T18:00:00Z",
+                "metrics": [
+                  {
+                    "metric_name": "public_network_transfer_bytes",
+                    "value": 9206457
+                  }
+                ]
+              },
+              {
+                "timeframe_start": "2026-10-16T18:00:00Z",
+                "timeframe_end": "2026-10-16T19:00:00Z",
+                "metrics": [
+                  {
+                    "metric_name": "public_network_transfer_bytes",
+                    "value": 9136352
+                  }
+                ]
+              },
+              {
+                "timeframe_start": "2026-10-16T19:00:00Z",
+                "timeframe_end": "2026-10-16T20:00:00Z",
+                "metrics": [
+                  {
+                    "metric_name": "public_network_transfer_bytes",
+                    "value": 1678117
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
