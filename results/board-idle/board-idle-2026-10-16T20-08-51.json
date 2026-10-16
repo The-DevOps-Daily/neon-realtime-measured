@@ -1,0 +1,92 @@
+{
+  "code_hash": "c42627a6f340e13d",
+  "results": {
+    "check-on-seal": {
+      "idle_after_s": null,
+      "renewals": 18,
+      "watched_s": 300
+    },
+    "no-check": {
+      "idle_after_s": 75,
+      "renewals": 3,
+      "watched_s": 75
+    }
+  },
+  "events": [
+    {
+      "s": 1.4,
+      "at": "2026-10-16T19:59:02.666Z",
+      "what": "suspend timeout 300 s -> 60 s"
+    },
+    {
+      "s": 2.6,
+      "at": "2026-10-16T19:59:03.890Z",
+      "what": "check-on-seal: waiting for the compute to suspend before opening the board"
+    },
+    {
+      "s": 2.9,
+      "at": "2026-10-16T19:59:04.191Z",
+      "what": "check-on-seal before: compute active"
+    },
+    {
+      "s": 78,
+      "at": "2026-10-16T20:00:19.286Z",
+      "what": "check-on-seal before: compute idle"
+    },
+    {
+      "s": 79.5,
+      "at": "2026-10-16T20:00:20.792Z",
+      "what": "check-on-seal: board live (3 queries), no writes from here"
+    },
+    {
+      "s": 79.8,
+      "at": "2026-10-16T20:00:21.068Z",
+      "what": "check-on-seal board open: compute active"
+    },
+    {
+      "s": 384.3,
+      "at": "2026-10-16T20:05:25.510Z",
+      "what": "check-on-seal: compute never suspended in 300 s; 18 renewals"
+    },
+    {
+      "s": 384.9,
+      "at": "2026-10-16T20:05:26.171Z",
+      "what": "no-check: waiting for the compute to suspend before opening the board"
+    },
+    {
+      "s": 385.3,
+      "at": "2026-10-16T20:05:26.501Z",
+      "what": "no-check before: compute active"
+    },
+    {
+      "s": 513.5,
+      "at": "2026-10-16T20:07:34.752Z",
+      "what": "no-check before: compute idle"
+    },
+    {
+      "s": 514.7,
+      "at": "2026-10-16T20:07:35.914Z",
+      "what": "no-check: board live (3 queries), no writes from here"
+    },
+    {
+      "s": 515,
+      "at": "2026-10-16T20:07:36.197Z",
+      "what": "no-check board open: compute active"
+    },
+    {
+      "s": 589.6,
+      "at": "2026-10-16T20:08:50.827Z",
+      "what": "no-check board open: compute idle"
+    },
+    {
+      "s": 589.6,
+      "at": "2026-10-16T20:08:50.827Z",
+      "what": "no-check: compute suspended 75 s after the board opened; 3 renewals"
+    },
+    {
+      "s": 589.9,
+      "at": "2026-10-16T20:08:51.142Z",
+      "what": "suspend timeout restored to 300 s"
+    }
+  ]
+}

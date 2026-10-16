@@ -1,0 +1,27 @@
+    1.4s  suspend timeout 300 s -> 60 s 
+    2.6s  check-on-seal: waiting for the compute to suspend before opening the board 
+    2.9s  check-on-seal before: compute active 
+   78.0s  check-on-seal before: compute idle 
+   79.5s  check-on-seal: board live (3 queries), no writes from here 
+   79.8s  check-on-seal board open: compute active 
+  384.3s  check-on-seal: compute never suspended in 300 s; 18 renewals 
+  384.9s  no-check: waiting for the compute to suspend before opening the board 
+  385.3s  no-check before: compute active 
+  513.5s  no-check before: compute idle 
+  514.7s  no-check: board live (3 queries), no writes from here 
+  515.0s  no-check board open: compute active 
+  589.6s  no-check board open: compute idle 
+  589.6s  no-check: compute suspended 75 s after the board opened; 3 renewals 
+  589.9s  suspend timeout restored to 300 s 
+{
+  "check-on-seal": {
+    "idle_after_s": null,
+    "renewals": 18,
+    "watched_s": 300
+  },
+  "no-check": {
+    "idle_after_s": 75,
+    "renewals": 3,
+    "watched_s": 75
+  }
+}

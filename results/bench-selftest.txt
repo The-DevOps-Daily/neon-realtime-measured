@@ -1,8 +1,10 @@
 PASS  untouched copy                           expected clean     got missing 0, mismatches 0, stalled null
 PASS  drop one incremental update              expected missing 1 got missing 1, mismatches 0, stalled null
 PASS  wrong row in an incremental update       expected mismatch  got missing 0, mismatches 1, stalled null
+PASS  one removal too many in an update        expected mismatch  got missing 0, mismatches 1, stalled null
+PASS  a seed row missing from a full result    expected mismatch  got missing 0, mismatches 1, stalled null
 PASS  one row missing from a full join result  expected mismatch  got missing 0, mismatches 1, stalled null
 PASS  aggregate total off by one               expected mismatch  got missing 0, mismatches 1, stalled null
 PASS  a client stall over one write            expected stalled 1 got missing 0, mismatches 0, stalled 1
 PASS  a line from another run                  expected refused   got scorer refused the files
-all 7 self-test cases behaved as expected
+all 9 self-test cases behaved as expected

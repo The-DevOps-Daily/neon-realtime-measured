@@ -7,7 +7,8 @@ export type RawOutcome = {
   result: 'delivered' | 'subscribe_rejected' | 'subscription_error' | 'connection_error' | 'closed' | 'timeout'
   code?: string
   message?: string
-  rows: Record<string, string | null>[]
+  rows: Record<string, string | null>[] // rows of the first result
+  changeRows: Record<string, string | null>[] // rows in incremental changes, any phase
   types: string[] // every server message type, in order
   renew?: { result: string; code?: string; rows: Record<string, string | null>[] }
 }
@@ -18,10 +19,18 @@ const decodeCell = (cell: any): string | null =>
 export async function rawSubscribe(
   url: string,
   authorization: string,
-  opts: { extra?: Record<string, unknown>; waitMs?: number; renewWith?: string } = {},
+  opts: {
+    extra?: Record<string, unknown>
+    waitMs?: number
+    renewWith?: string
+    // run once the first result is in (for example, a write that should arrive as a change)
+    afterBaseline?: () => Promise<void>
+    // run once the renew message is sent
+    afterRenew?: () => Promise<void>
+  } = {},
 ): Promise<RawOutcome> {
   const ws = new WS(url, 'neon.realtime.v1')
-  const out: RawOutcome = { result: 'timeout', rows: [], types: [] }
+  const out: RawOutcome = { result: 'timeout', rows: [], changeRows: [], types: [] }
   let columns: string[] = []
   let liveId: string | undefined
   let phase: 'initial' | 'renew' = 'initial'
@@ -45,14 +54,24 @@ export async function rawSubscribe(
         if (phase === 'initial') out.rows.push(...rows)
         else out.renew!.rows.push(...rows)
       }
+      if (msg.type === 'keyed_results') {
+        for (const ch of msg.changes ?? []) {
+          if (Array.isArray(ch.values)) out.changeRows.push(Object.fromEntries(ch.values.map((v: any, i: number) => [columns[i], decodeCell(v)])))
+        }
+      }
       if (msg.type === 'baseline_sync_end' && phase === 'initial') {
         out.result = 'delivered'
-        if (!opts.renewWith) return finish()
-        phase = 'renew'
-        out.renew = { result: 'timeout', rows: [] }
-        ws.send(JSON.stringify({ type: 'renew', live_id: liveId, authorization: opts.renewWith }))
         clearTimeout(timer)
-        setTimeout(finish, 5000) // collect whatever the renewal brings
+        const next = async () => {
+          if (opts.afterBaseline) { await opts.afterBaseline(); await new Promise((r) => setTimeout(r, 3000)) }
+          if (!opts.renewWith) return finish()
+          phase = 'renew'
+          out.renew = { result: 'timeout', rows: [] }
+          ws.send(JSON.stringify({ type: 'renew', live_id: liveId, authorization: opts.renewWith }))
+          if (opts.afterRenew) await opts.afterRenew()
+          setTimeout(finish, 5000) // collect whatever the renewal brings
+        }
+        next()
       }
       if (msg.type === 'renewed' && out.renew) out.renew.result = 'renewed'
       if (msg.type === 'subscribe_rejected') { out.result = 'subscribe_rejected'; out.code = msg.code; out.message = msg.message; finish() }

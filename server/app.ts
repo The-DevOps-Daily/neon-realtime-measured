@@ -27,7 +27,12 @@ async function requireUser(c: Context): Promise<string> {
 
 const int = (v: unknown) => (typeof v === 'number' && Number.isInteger(v) && v > 0 ? v : undefined)
 
-export function createApp(db: Db, sealer: Sealer) {
+// checkMembershipOnSeal: also look the user up in store_members before sealing, to
+// give non-members a clear 403. It is not what keeps the data scoped (the join in
+// every live query does that), and it costs a database query on every renewal,
+// about every 50 s per subscription, which keeps the compute from scaling to zero
+// (results/board-idle/). The board leaves it off.
+export function createApp(db: Db, sealer: Sealer, opts: { checkMembershipOnSeal?: boolean } = {}) {
   async function isMember(userId: string, storeId: number) {
     const rows = await db.select({ s: storeMembers.store_id }).from(storeMembers)
       .where(and(eq(storeMembers.user_id, userId), eq(storeMembers.store_id, storeId))).limit(1)
@@ -57,9 +62,9 @@ export function createApp(db: Db, sealer: Sealer) {
       const body = await c.req.json<{ storeId?: unknown; part?: unknown }>()
       const storeId = int(body.storeId)
       if (!storeId) return c.json({ error: 'storeId must be a positive integer' }, 400)
-      // A clear refusal for non-members. The join inside each query is what keeps
-      // an already-sealed query scoped after a member is removed.
-      if (!(await isMember(userId, storeId))) return c.json({ error: 'not a member of this store' }, 403)
+      // Sealing is local crypto: with the check off, a renewal never touches Postgres.
+      // A non-member gets a sealed query that matches no rows.
+      if (opts.checkMembershipOnSeal && !(await isMember(userId, storeId))) return c.json({ error: 'not a member of this store' }, 403)
       if (body.part === 'orders') return c.json(await sealer.seal({ query: openOrdersQuery(db, userId, storeId) }))
       if (body.part === 'customers') return c.json(await sealer.seal({ query: storeCustomersQuery(db, userId, storeId) }))
       if (body.part === 'stats') return c.json(await sealer.seal({ query: statusCountsQuery(db, userId, storeId) }))

@@ -49,6 +49,11 @@ for (const dir of dirs) {
         const expected = u.txids.map((t: string) => byTxid.get(t)?.seq).filter((x: any) => x != null).sort((a: number, b: number) => a - b)
         const got = [...u.seqs].filter((x) => x != null).sort((a: number, b: number) => a - b)
         if (JSON.stringify(expected) !== JSON.stringify(got)) note(`changes txids ${u.txids} upserted seqs ${got} expected ${expected}`)
+        // and it must remove exactly one row for each of its writes that deleted one
+        if (u.removes !== undefined) {
+          const removals = u.txids.filter((t: string) => byTxid.get(t)?.deleted != null).length
+          if (u.removes !== removals) note(`changes txids ${u.txids} removed ${u.removes} rows, expected ${removals}`)
+        }
       }
     } else {
       const b = baselines.filter((x) => x.t <= u.t).at(-1)
@@ -64,6 +69,11 @@ for (const dir of dirs) {
       const expected = vis.filter((x) => !deleted.has(x.id)).map((x) => x.seq).sort((a, b) => a - b)
       const got = u.seqs.filter((x: any) => x != null).sort((a: number, b: number) => a - b)
       if (JSON.stringify(expected) !== JSON.stringify(got)) note(`rows update at ${u.t}: ${got.length} seqs, expected ${expected.length}`)
+      // and the whole result, seed rows included, must have the size the window implies
+      if (typeof u.n === 'number') {
+        const size = meta.window + vis.filter((x) => x.deleted == null).length
+        if (u.n !== size) note(`rows update at ${u.t}: ${u.n} rows, expected ${size}`)
+      }
     }
     if (u.rows && meta.shape === 'aggregate' && u.type === 'rows') {
       const total = u.rows.reduce((a: number, r: any) => a + r.orders, 0)

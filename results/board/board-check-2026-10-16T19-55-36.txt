@@ -1,0 +1,10 @@
+ok    alice signs in through Neon Auth
+ok    alice sees only her store: [{"id":10,"name":"Main St"}]
+ok    three live queries are live: orders 8, customers 20, status groups 4
+ok    a new order appears on the board: 99 ms from POST to awaitTxId
+ok    moving it to preparing shows up: 70 ms
+ok    a done order leaves the open board: 54 ms
+ok    the header counts include it
+ok    eve's sealed Main St board has no rows: 0 rows; alice sees 8
+ok    eve cannot add an order to Main St
+ok    no token, no sealed query

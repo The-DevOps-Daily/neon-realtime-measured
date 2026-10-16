@@ -33,6 +33,13 @@ for (const [id, user, n] of [[VICTIM, 'victim-user', 30], [ATTACKER, 'attacker-u
 const victimIds = new Set((await c.query('select id::text from orders where store_id = $1', [VICTIM])).rows.map((r) => r.id))
 const attackerIds = new Set((await c.query('select id::text from orders where store_id = $1', [ATTACKER])).rows.map((r) => r.id))
 c.release()
+// Writes made during an attempt, so incremental changes are part of what is checked.
+// Every new victim order id joins the victim set, so a leak of it would be counted.
+const addOrder = async (store: number) => {
+  const { rows } = await pool.query('insert into orders (store_id, customer_id, total_cents) values ($1, $2, 777) returning id::text as id', [store, store * 1000 + 1])
+  ;(store === VICTIM ? victimIds : attackerIds).add(rows[0].id)
+  return rows[0].id as string
+}
 if (victimIds.size === 0 || attackerIds.size === 0) throw new Error('victim or attacker store has no rows: refusing to run')
 
 const sealer = createSealer()
@@ -48,10 +55,14 @@ const forged = await forgedSealer.seal({ query: plainQuery(db, VICTIM) })
 type Attack = { id: string; what: string; run: () => Promise<RawOutcome>; expect: (o: RawOutcome) => boolean; expected: string; documented?: boolean }
 const rejected = (code: string) => (o: RawOutcome) => o.result === 'subscribe_rejected' && o.code === code
 const attacks: Attack[] = [
-  { id: 'C0', what: 'control: the attacker subscribes to their own sealed query', run: () => rawSubscribe(url, own.capability),
-    expect: (o) => o.result === 'delivered' && o.rows.length === attackerIds.size && o.rows.every((r) => attackerIds.has(r.id!)), expected: 'delivered, exactly the attacker store rows' },
-  { id: 'D1', what: 'a stolen sealed query (the victim\'s) used by someone else', run: () => rawSubscribe(url, victim.capability), documented: true,
-    expect: (o) => o.result === 'delivered' && o.rows.length === victimIds.size, expected: 'delivered: a sealed query is a bearer token (documented)' },
+  { id: 'C0', what: 'control: the attacker subscribes to their own sealed query, then their store gets an order',
+    run: () => rawSubscribe(url, own.capability, { afterBaseline: async () => { await addOrder(ATTACKER) } }),
+    expect: (o) => o.result === 'delivered' && o.rows.length === 5 && o.rows.every((r) => attackerIds.has(r.id!)) && o.changeRows.length === 1 && attackerIds.has(o.changeRows[0].id!),
+    expected: 'delivered: the 5 attacker rows, then the new order as a change' },
+  { id: 'D1', what: 'a stolen sealed query (the victim\'s) used by someone else, then the victim store gets an order', documented: true,
+    run: () => rawSubscribe(url, victim.capability, { afterBaseline: async () => { await addOrder(VICTIM) } }),
+    expect: (o) => o.result === 'delivered' && o.rows.length === 30 && o.changeRows.some((r) => victimIds.has(r.id!)),
+    expected: 'delivered: the 30 victim rows, then the new order as a change (documented: a sealed query is a bearer token)' },
   { id: 'T1', what: 'one character changed in the ciphertext', run: () => rawSubscribe(url, [h, '', iv, flip(ct, 20), tag].join('.')),
     expect: rejected('authorization_failed'), expected: 'subscribe_rejected authorization_failed' },
   { id: 'T2', what: 'one character changed in the GCM tag', run: () => rawSubscribe(url, [h, '', iv, ct, flip(tag, 3)].join('.')),
@@ -67,9 +78,11 @@ const attacks: Attack[] = [
   { id: 'T7', what: 'header rewritten to alg "none"', run: () => rawSubscribe(url, [Buffer.from(JSON.stringify({ alg: 'none', enc: 'A256GCM', v: 1 })).toString('base64url'), '', iv, ct, tag].join('.')),
     expect: rejected('authorization_failed'), expected: 'subscribe_rejected authorization_failed' },
   { id: 'T8', what: 'subscribe message with an extra "sql" field', run: () => rawSubscribe(url, own.capability, { extra: { sql: 'select id from orders' } }),
-    expect: (o) => o.result !== 'delivered' || o.rows.every((r) => attackerIds.has(r.id!)), expected: 'refused, or only the attacker rows' },
-  { id: 'T9', what: 'renew the attacker\'s live subscription with the forged victim capability', run: () => rawSubscribe(url, own.capability, { renewWith: forged.capability }),
-    expect: (o) => o.result === 'delivered' && o.renew?.result !== 'renewed' && o.renew!.rows.length === 0, expected: 'renewal refused, no new rows' },
+    expect: (o) => o.result === 'connection_error' && o.code === 'invalid_payload' && o.rows.length === 0, expected: 'connection_error invalid_payload' },
+  { id: 'T9', what: 'renew the attacker\'s live subscription with the forged victim capability, then the victim store gets an order',
+    run: () => rawSubscribe(url, own.capability, { renewWith: forged.capability, afterRenew: async () => { await addOrder(VICTIM) } }),
+    expect: (o) => o.result === 'delivered' && o.renew?.result === 'subscription_error' && o.renew.code === 'renewal_failed' && o.renew.rows.length === 0,
+    expected: 'own rows delivered; renewal: subscription_error renewal_failed; no victim rows or changes' },
 ]
 
 // Cross-branch: a child branch inherits Realtime. Is its secret its own?
@@ -101,7 +114,8 @@ if (values['self-test']) {
 const results: any[] = []
 for (const a of attacks) {
   const o = await a.run()
-  const leaked = o.rows.filter((r) => victimIds.has(r.id!)).length + (o.renew?.rows.filter((r) => victimIds.has(r.id!)).length ?? 0)
+  const leaked = o.rows.filter((r) => victimIds.has(r.id!)).length + o.changeRows.filter((r) => victimIds.has(r.id!)).length
+    + (o.renew?.rows.filter((r) => victimIds.has(r.id!)).length ?? 0)
   const ok = a.expect(o) && (a.documented || leaked === 0)
   results.push({ id: a.id, attack: a.what, expected: a.expected, got: `${o.result}${o.code ? ' ' + o.code : ''}${o.renew ? `; renew: ${o.renew.result}${o.renew.code ? ' ' + o.renew.code : ''}` : ''}`,
     victim_rows: leaked, ok })

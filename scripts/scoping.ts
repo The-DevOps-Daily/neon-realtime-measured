@@ -42,7 +42,9 @@ for (const name of ['alice', 'bob', 'eve']) users[name] = await signIn(creds[nam
 
 const { db, pool } = createDb(3)
 const sealer = createSealer()
-const app = createApp(db, sealer)
+// The recorded run used the membership check on every seal, so renewals were refused
+// with a 403 after a removal. Kept on here so a rerun behaves the same way.
+const app = createApp(db, sealer, { checkMembershipOnSeal: true })
 const admin = await pool.connect()
 await createStore(admin, STORE, 'Harbour', [users.alice.userId, users.bob.userId])
 await admin.query('delete from store_members where store_id = $1 and user_id = $2', [STORE, users.eve.userId])

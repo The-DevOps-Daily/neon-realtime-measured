@@ -1,0 +1,120 @@
+{
+  "at": "2026-10-16T19:57:39.500Z",
+  "code_hash": "bc0d7d28fbae8856",
+  "victim_rows": 32,
+  "attacker_rows": 6,
+  "results": [
+    {
+      "id": "C0",
+      "attack": "control: the attacker subscribes to their own sealed query, then their store gets an order",
+      "expected": "delivered: the 5 attacker rows, then the new order as a change",
+      "got": "delivered",
+      "victim_rows": 0,
+      "ok": true
+    },
+    {
+      "id": "D1",
+      "attack": "a stolen sealed query (the victim's) used by someone else, then the victim store gets an order",
+      "expected": "delivered: the 30 victim rows, then the new order as a change (documented: a sealed query is a bearer token)",
+      "got": "delivered",
+      "victim_rows": 31,
+      "ok": true
+    },
+    {
+      "id": "T1",
+      "attack": "one character changed in the ciphertext",
+      "expected": "subscribe_rejected authorization_failed",
+      "got": "subscribe_rejected authorization_failed",
+      "victim_rows": 0,
+      "ok": true
+    },
+    {
+      "id": "T2",
+      "attack": "one character changed in the GCM tag",
+      "expected": "subscribe_rejected authorization_failed",
+      "got": "subscribe_rejected authorization_failed",
+      "victim_rows": 0,
+      "ok": true
+    },
+    {
+      "id": "T3",
+      "attack": "one character changed in the IV",
+      "expected": "subscribe_rejected authorization_failed",
+      "got": "subscribe_rejected authorization_failed",
+      "victim_rows": 0,
+      "ok": true
+    },
+    {
+      "id": "T4",
+      "attack": "header and IV from the attacker, ciphertext and tag from the victim",
+      "expected": "subscribe_rejected authorization_failed",
+      "got": "subscribe_rejected authorization_failed",
+      "victim_rows": 0,
+      "ok": true
+    },
+    {
+      "id": "T5",
+      "attack": "ciphertext truncated by 8 characters",
+      "expected": "subscribe_rejected authorization_failed",
+      "got": "subscribe_rejected authorization_failed",
+      "victim_rows": 0,
+      "ok": true
+    },
+    {
+      "id": "T6",
+      "attack": "the victim query sealed with a guessed secret in the right format",
+      "expected": "subscribe_rejected authorization_failed",
+      "got": "subscribe_rejected authorization_failed",
+      "victim_rows": 0,
+      "ok": true
+    },
+    {
+      "id": "T7",
+      "attack": "header rewritten to alg \"none\"",
+      "expected": "subscribe_rejected authorization_failed",
+      "got": "subscribe_rejected authorization_failed",
+      "victim_rows": 0,
+      "ok": true
+    },
+    {
+      "id": "T8",
+      "attack": "subscribe message with an extra \"sql\" field",
+      "expected": "connection_error invalid_payload",
+      "got": "connection_error invalid_payload",
+      "victim_rows": 0,
+      "ok": true
+    },
+    {
+      "id": "T9",
+      "attack": "renew the attacker's live subscription with the forged victim capability, then the victim store gets an order",
+      "expected": "own rows delivered; renewal: subscription_error renewal_failed; no victim rows or changes",
+      "got": "delivered; renew: subscription_error renewal_failed",
+      "victim_rows": 0,
+      "ok": true
+    },
+    {
+      "id": "B1",
+      "attack": "a query sealed with the child branch secret, sent to the parent branch",
+      "expected": "subscribe_rejected authorization_failed",
+      "got": "subscribe_rejected authorization_failed",
+      "victim_rows": 0,
+      "ok": true
+    },
+    {
+      "id": "B2",
+      "attack": "a query sealed with the parent secret, sent to the child branch",
+      "expected": "subscribe_rejected authorization_failed",
+      "got": "subscribe_rejected authorization_failed",
+      "victim_rows": 0,
+      "ok": true
+    },
+    {
+      "id": "E1",
+      "attack": "the attacker's own sealed query, 65 s after sealing",
+      "expected": "subscribe_rejected authorization_expired",
+      "got": "subscribe_rejected authorization_expired",
+      "victim_rows": 0,
+      "ok": true
+    }
+  ]
+}

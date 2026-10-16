@@ -38,7 +38,7 @@ npm run board:api             # Hono API on :8787: verifies the Neon Auth JWT, s
 npm run board:web             # Vite on :5173, proxies /api
 ```
 
-The board shows open orders per status column, a header with counts and revenue per status, and moves orders along with optimistic updates confirmed by `awaitTxId`. It subscribes to three live queries, all scoped by a join through `store_members` on the user id from the verified token (`lib/board-queries.ts`).
+The API seals without querying Postgres (the membership join inside each live query is what scopes the data), so a renewal never touches the database; see `results/board-idle/` for why that matters. The board shows open orders per status column, a header with counts and revenue per status, and moves orders along with optimistic updates confirmed by `awaitTxId`. It subscribes to three live queries, all scoped by a join through `store_members` on the user id from the verified token (`lib/board-queries.ts`).
 
 The board's sign-in goes through its own API (`POST /api/session`), which signs in to Neon Auth server-side and hands the browser its JWT. That keeps the demo's dependencies small. A production app would use the [`@neondatabase/auth`](https://neon.com/docs/auth/overview) client in the browser.
 
@@ -62,6 +62,8 @@ The board's sign-in goes through its own API (`POST /api/session`), which signs 
 | `scripts/tamper.ts` | Forged, edited, spliced, expired, cross-branch and stolen sealed queries, over the raw protocol | `results/tamper/` |
 | `scripts/scoping.ts` | Per-user scoping without RLS, through the board API with real Neon Auth users | `results/scoping/` |
 | `scripts/board-check.ts` | The board end to end through its API and the SDK, without a browser | `results/board/` |
+| `scripts/board-idle.ts` | The board's three queries renewed through its API, with and without a database lookup on every seal, while the compute's state is polled | `results/board-idle/` |
+| `scripts/run-after-review.sh` | The reruns made after the write-up's first review: board check, stricter tamper run, board idling | `results/run-after-review.log` |
 | `scripts/run-experiments.sh` | Everything after the matrix, one at a time, scale-to-zero last | `results/run-experiments.log` |
 | `scripts/session-events.ts`, `egress-meter.ts` | Server-side errors the recorders saw; their received bytes per hour against Neon's consumption API | `results/` |
 
@@ -82,7 +84,7 @@ Every run directory has a `meta.json` stamped with a hash of the code that recor
 
 All on Lakebase Postgres 18 in `aws-eu-central-1`, from one client with a 32 ms round trip (`SELECT 1`, median of per-run p50s). Numbers are from the files named; the write-up has the detail.
 
-**Latency** (`results/latency/report.json`, 18 runs, 48,600 writes, none missing, no consistency mismatches). Write issued to update applied, p50 / p99 in ms:
+**Latency** (`results/latency/report.json`, 18 runs, 48,600 writes, none missing, no consistency mismatches; the checks cover row identity, row counts, removals and aggregate totals, not every column value). Write issued to update applied, p50 / p99 in ms:
 
 | Shape | 1 write/s | 10 writes/s | 100 writes/s |
 |---|---|---|---|
@@ -90,23 +92,25 @@ All on Lakebase Postgres 18 in `aws-eu-central-1`, from one client with a 32 ms 
 | join (orders, customers, store_members) | 56.2 / 90.3 | 53.6 / 94.4 | 60.4 / 2,083 |
 | aggregate | 47.2 / 63.0 | 42.4 / 119.7 | 40.7 / 647.9 |
 
-The join at 100 writes/s is limited by the SDK on this client (9.4 ms of CPU per 200-row result, `results/sdk-cost/`); the raw-protocol recorder held p50 44 to 49 ms and p99 73 to 114 ms on the same workload (`results/diagnostic/`). Eleven `backend_session_lost` errors in 59 minutes of subscriptions account for most of the one-second maximums; the SDK recovered from each in 0.95 to 1.51 s.
+For the join at 100 writes/s, the SDK on this client is the main limit: a separate benchmark at 20 updates/s measured 9.4 ms of CPU per 200-row result (`results/sdk-cost/`), about 94% of a core if that held at 100/s. Two complete raw-protocol runs on the same workload held p50 44 to 49 ms and p99 73 to 114 ms; a third had 220 writes delayed by up to 957 ms in its first five seconds, with the client idle, before a session loss ended it (`results/diagnostic/`). Eleven `backend_session_lost` errors in 59 minutes of subscriptions account for most of the one-second maximums; the SDK recovered from each in 0.95 to 1.51 s.
 
-**Full results on every write** (`results/explore/`). A single-table filter and a join to `store_members` pinned to one row by the `WHERE` clause got incremental changes. Joins to `customers`, `EXISTS`, `IN (SELECT ...)`, `GROUP BY`, `count(*)`, `DISTINCT`, `ORDER BY` with or without `LIMIT`, and `LIMIT` alone were re-sent in full on every write. Bytes per write grow at about 134 per row (`results/size-sweep/`).
+**Full results on every write** (`results/explore/`), in the forms we tested. A single-table filter and a join to `store_members` pinned to one row by the `WHERE` clause got incremental changes. Joins to `customers`, `EXISTS`, `IN (SELECT ...)`, `GROUP BY`, `count(*)`, `DISTINCT`, `ORDER BY` with or without `LIMIT`, and `LIMIT` alone were re-sent in full on every write. Bytes per write grow at about 134 per row for the join's columns (`results/size-sweep/`).
 
 **Reconnect** (`results/reconnect/`). After a 5 s and a 75 s network cut, the first update was a complete result and the live rows matched the database exactly. Live again 2.8 s after the short cut, and 33 s and 48 s after the long one (SDK backoff).
 
 **Scale to zero** (`results/scale-to-zero/`). With one subscription held open and renewed, the compute suspended after 75 s and stayed suspended; a write then woke it and reached the open subscription 1.12 s after it was issued. Starting a live query from a suspended compute woke it. In that file, `first_result_while_active_ms` is misnamed: the compute had just suspended when that subscription started, so it was a cold start too.
 
-**Primary impact** (`results/primary-impact/2026-10-16T19-07-34/`). 100 live queries on and off in alternating blocks, 20 writes/s: the write's execution time on the primary stayed at 0.15 to 0.17 ms in every block.
+**The board idling** (`results/board-idle/`). Alice's three board queries renewed through the API, suspend timeout 60 s, no writes: with a `store_members` lookup on every seal the compute never suspended in 300 s (18 renewals); with sealing that does not touch Postgres, as the board ships, it suspended 75 s after the board opened.
+
+**Primary impact** (`results/primary-impact/2026-10-16T19-07-34/`). 100 live queries on and off in alternating blocks, 20 writes/s: the write's execution time on the primary stayed at 0.15 to 0.17 ms in every block. On the client, writes were about 2.5 ms faster in the blocks with the queries on, which we put down to the client's Wi-Fi power saving (untested). Realtime stayed enabled throughout, so this does not measure the cost of `wal_level = logical`.
 
 **Session losses** (`results/session-events.json`, `scripts/session-events.ts`). 11 server-side `backend_session_lost` errors in 59 subscription minutes of the matrix, and 9 more (plus one heartbeat timeout while the client was swapping) in the superseded first recording.
 
 **The egress meter** (`results/egress-meter-*.json`, `scripts/egress-meter.ts`). In the three full hours from 15:00 to 18:00 UTC, the bench recorders received at least 862 MB of Realtime message payload, while the consumption API reported 16.2 MB of public network transfer for the project.
 
-**Sealed queries** (`results/tamper/`). 14 of 14 outcomes as expected; no tampered, forged, expired or cross-branch capability returned a row. A copied valid one works until it expires (60 s), as documented.
+**Sealed queries** (`results/tamper/`). 14 of 14 outcomes as expected, in the first run and in a stricter rerun (exact error codes for every attempt, and writes during the control, the stolen-query case and the renewal attack so incremental changes are checked for leaks too). No tampered, forged, expired or cross-branch attempt disclosed a victim row. A copied valid one works until it expires (60 s), as documented. The self-test swaps one attack for the real victim capability and must fail.
 
-**Scoping** (`results/scoping/`). With the membership join in the query, a removed member's result emptied 8 ms after the removal committed. With the check only at seal time, new orders kept reaching them for 56 s.
+**Scoping** (`results/scoping/`). With the membership join in the query, a removed member's result was empty 8 ms after the removal was acknowledged (one test, 5 ms polling). With the check only at seal time, new orders kept reaching them for 56 s.
 
 ## Notes on the recordings
 

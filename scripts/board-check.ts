@@ -53,7 +53,16 @@ check('a done order leaves the open board', !open().some((o) => o.id === created
 await subs.stats.awaitTxId(done.txid, 10_000)
 check('the header counts include it', subs.stats.getSnapshot().data.some((r: any) => r.status === 'done' && r.orders >= 1))
 
-check('eve cannot seal the Main St board', (await call(eve.token, 'POST', '/api/board/live', { storeId, part: 'orders' })).status === 403)
+// The API seals without a database lookup; the membership join in the query is
+// what keeps eve out. Her sealed Main St board must come back empty.
+{
+  const sealed = (await call(eve.token, 'POST', '/api/board/live', { storeId, part: 'orders' })).json
+  const sub = client.subscribe(sealed)
+  await new Promise<void>((resolve) => sub.onStateChange((s: any) => s.status === 'live' && resolve()))
+  const rows = sub.getSnapshot().data ?? []
+  check("eve's sealed Main St board has no rows", rows.length === 0, `${rows.length} rows; alice sees ${open().length}`)
+  sub.unsubscribe()
+}
 check('eve cannot add an order to Main St', (await call(eve.token, 'POST', '/api/orders', { storeId, customerId, totalCents: 1 })).status === 403)
 check('no token, no sealed query', (await call(undefined, 'POST', '/api/board/live', { storeId, part: 'orders' })).status === 401)
 
