@@ -1,0 +1,33 @@
+{
+  "run_id": "join-100ps-w200-raw-D1-2026-10-16T17-13-18",
+  "code_hash": "24b7c8ee202e1939",
+  "shape": "join",
+  "rate": 100,
+  "duration": 60,
+  "window": 200,
+  "label": "D1",
+  "subscriber": "raw protocol, no SDK (diagnostic)",
+  "store_id": 1000,
+  "user": "bench-user-1000",
+  "seed": 1000,
+  "started_at": "2026-10-16T17:13:19.198Z",
+  "node": "v24.14.0",
+  "sdk": "@neon/realtime@0.1.0",
+  "region": "aws-eu-central-1",
+  "compute": {
+    "id": "ep-morning-hall-ba4xiwgd",
+    "min_cu": 0.25,
+    "max_cu": 1
+  },
+  "loadavg_at_start": [
+    2.45,
+    4.45,
+    4.8
+  ],
+  "memory_mb_at_start": {
+    "MemAvailable": 2817,
+    "SwapTotal": 2048,
+    "SwapFree": 844
+  },
+  "waited_for_load_s": 407
+}

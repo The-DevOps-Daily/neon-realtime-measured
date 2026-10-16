@@ -1,0 +1,23 @@
+plain filter: live
+plain + ORDER BY id DESC LIMIT 20: live
+join orders-customers: live
+join through store_members: live
+EXISTS membership check: live
+IN subquery membership: live
+aggregate GROUP BY status: live
+count(*) only: live
+
+store 904: 300 prefilled orders, 3 single-row inserts
+┌─────────┬─────────────────────────────────────┬─────────────┬─────────────────────┬─────────────┬─────────────────┬───────────────────────┐
+│ (index) │ variant                             │ result rows │ incremental batches │ full resets │ bytes per write │ of which re-sent rows │
+├─────────┼─────────────────────────────────────┼─────────────┼─────────────────────┼─────────────┼─────────────────┼───────────────────────┤
+│ 0       │ 'plain filter'                      │ 300         │ 3                   │ 0           │ 479             │ 0                     │
+│ 1       │ 'plain + ORDER BY id DESC LIMIT 20' │ 20          │ 0                   │ 3           │ 2947            │ 2386                  │
+│ 2       │ 'join orders-customers'             │ 300         │ 0                   │ 3           │ 37346           │ 36785                 │
+│ 3       │ 'join through store_members'        │ 300         │ 3                   │ 0           │ 472             │ 0                     │
+│ 4       │ 'EXISTS membership check'           │ 300         │ 0                   │ 3           │ 33245           │ 32684                 │
+│ 5       │ 'IN subquery membership'            │ 300         │ 0                   │ 3           │ 33245           │ 32684                 │
+│ 6       │ 'aggregate GROUP BY status'         │ 3           │ 0                   │ 3           │ 977             │ 416                   │
+│ 7       │ 'count(*) only'                     │ 1           │ 0                   │ 3           │ 760             │ 199                   │
+└─────────┴─────────────────────────────────────┴─────────────┴─────────────────────┴─────────────┴─────────────────┴───────────────────────┘
+finished 2026-10-16T18:23:46.749Z

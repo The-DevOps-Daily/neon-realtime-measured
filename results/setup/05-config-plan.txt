@@ -1,0 +1,6 @@
+→ Planning against branch main (br-frosty-queen-baejcesa)
+Planned changes
+  + Neon Auth
+  + Realtime
+
+Utilized services: Postgres, Neon Auth, Realtime

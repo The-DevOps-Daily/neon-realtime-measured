@@ -1,0 +1,33 @@
+{
+  "run_id": "join-100ps-w200-A-2026-10-16T17-43-27",
+  "code_hash": "24b7c8ee202e1939",
+  "shape": "join",
+  "rate": 100,
+  "duration": 60,
+  "window": 200,
+  "label": "A",
+  "subscriber": "@neon/realtime client SDK",
+  "store_id": 1000,
+  "user": "bench-user-1000",
+  "seed": 1000,
+  "started_at": "2026-10-16T17:43:27.791Z",
+  "node": "v24.14.0",
+  "sdk": "@neon/realtime@0.1.0",
+  "region": "aws-eu-central-1",
+  "compute": {
+    "id": "ep-morning-hall-ba4xiwgd",
+    "min_cu": 0.25,
+    "max_cu": 1
+  },
+  "loadavg_at_start": [
+    1.37,
+    0.79,
+    1.15
+  ],
+  "memory_mb_at_start": {
+    "MemAvailable": 2577,
+    "SwapTotal": 2048,
+    "SwapFree": 858
+  },
+  "waited_for_load_s": 2
+}

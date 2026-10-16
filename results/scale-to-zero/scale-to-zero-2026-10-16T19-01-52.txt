@@ -1,0 +1,35 @@
+    1.2s  usage before {"compute_time_seconds":2458,"active_time_seconds":9172,"data_transfer_bytes":9716418}
+    1.5s  suspend timeout 300 s -> 60 s 
+    2.9s  control: last query done, nothing open 
+    3.2s  control: compute active {"last_active":"2026-10-16T19:01:34Z"}
+   67.9s  control: compute idle {"last_active":"2026-10-16T19:01:34Z"}
+   68.9s  subscription live 
+   68.9s  held: subscription live, no writes from here 
+   69.2s  held: compute active {"last_active":"2026-10-16T19:01:34Z"}
+  143.9s  held: compute idle {"last_active":"2026-10-16T19:01:34Z"}
+  143.9s  held: 1 renewals so far, subscription is live 
+  204.5s  held: 60 s later the compute is idle, subscription is live 
+  205.6s  wake: write while suspended {"connect_ms":853,"insert_ms":247,"issue_to_ack_ms":1142,"issue_to_update_ms":1118}
+  205.9s  after wake: compute active {"last_active":"2026-10-16T19:01:34Z"}
+  281.1s  after wake: compute idle {"last_active":"2026-10-16T19:01:34Z"}
+  281.1s  subscription closed 
+  281.1s  cold: all subscriptions closed, compute idle 
+  293.3s  cold: new subscription live {"first_result_ms":1840,"compute":"active"}
+  293.7s  suspend timeout restored to 300 s 
+  299.0s  usage after (the API counters can lag) {"compute_time_seconds":4111,"active_time_seconds":15736,"data_transfer_bytes":26278647}
+{
+  "control_idle_after_s": 65,
+  "first_result_while_active_ms": 979,
+  "held_idle_after_s": 75,
+  "held_still_idle_60s_later": true,
+  "renewals_while_held": 2,
+  "wake": {
+    "connect_ms": 853,
+    "insert_ms": 247,
+    "issue_to_ack_ms": 1142,
+    "issue_to_update_ms": 1118
+  },
+  "after_wake_idle_after_s": 75,
+  "cold_first_result_ms": 1840,
+  "cold_woke_compute": true
+}

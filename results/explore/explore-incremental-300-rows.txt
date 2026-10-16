@@ -1,0 +1,23 @@
+plain filter: live
+plain + ORDER BY id DESC LIMIT 20: live
+join orders-customers: live
+join through store_members: live
+EXISTS membership check: live
+IN subquery membership: live
+aggregate GROUP BY status: live
+count(*) only: live
+
+store 902: 300 prefilled orders, 3 single-row inserts
+┌─────────┬─────────────────────────────────────┬─────────────────────┬─────────────┬─────────────────┬───────────────────────┐
+│ (index) │ variant                             │ incremental batches │ full resets │ bytes per write │ of which re-sent rows │
+├─────────┼─────────────────────────────────────┼─────────────────────┼─────────────┼─────────────────┼───────────────────────┤
+│ 0       │ 'plain filter'                      │ 3                   │ 0           │ 470             │ 0                     │
+│ 1       │ 'plain + ORDER BY id DESC LIMIT 20' │ 0                   │ 3           │ 2914            │ 2362                  │
+│ 2       │ 'join orders-customers'             │ 0                   │ 3           │ 36775           │ 36223                 │
+│ 3       │ 'join through store_members'        │ 3                   │ 0           │ 463             │ 0                     │
+│ 4       │ 'EXISTS membership check'           │ 0                   │ 3           │ 32680           │ 32128                 │
+│ 5       │ 'IN subquery membership'            │ 0                   │ 3           │ 138126          │ 137574                │
+│ 6       │ 'aggregate GROUP BY status'         │ 0                   │ 3           │ 968             │ 416                   │
+│ 7       │ 'count(*) only'                     │ 0                   │ 3           │ 751             │ 199                   │
+└─────────┴─────────────────────────────────────┴─────────────────────┴─────────────┴─────────────────┴───────────────────────┘
+finished 2026-10-16T14:51:59.563Z

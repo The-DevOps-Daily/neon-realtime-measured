@@ -1,0 +1,32 @@
+{
+  "run_id": "join-10ps-w200-smoke-2026-10-16T17-05-02",
+  "code_hash": "867676640fe6128f",
+  "shape": "join",
+  "rate": 10,
+  "duration": 20,
+  "window": 200,
+  "label": "smoke",
+  "store_id": 1000,
+  "user": "bench-user-1000",
+  "seed": 1000,
+  "started_at": "2026-10-16T17:05:02.669Z",
+  "node": "v24.14.0",
+  "sdk": "@neon/realtime@0.1.0",
+  "region": "aws-eu-central-1",
+  "compute": {
+    "id": "ep-morning-hall-ba4xiwgd",
+    "min_cu": 0.25,
+    "max_cu": 1
+  },
+  "loadavg_at_start": [
+    5.5,
+    6.26,
+    5.06
+  ],
+  "memory_mb_at_start": {
+    "MemAvailable": 2242,
+    "SwapTotal": 2048,
+    "SwapFree": 873
+  },
+  "waited_for_load_s": 2
+}

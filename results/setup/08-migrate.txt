@@ -1,0 +1,2 @@
+applied db/001_schema.sql
+tables: customers, orders, store_members, stores

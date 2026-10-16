@@ -1,0 +1,140 @@
+{
+  "latencyChart": {
+    "type": "line",
+    "title": "Write issued to update applied, p50",
+    "unit": "ms",
+    "caption": "Neon Realtime beta, aws-eu-central-1, client about 35 ms away. Each point pools two runs: 600 writes at 1/s, 3,600 at 10/s, 12,000 at 100/s. The live result is held at 200 rows. Dashed: how long the write itself took to be acknowledged, all shapes.",
+    "x": [
+      "1 write/s",
+      "10 writes/s",
+      "100 writes/s"
+    ],
+    "series": [
+      {
+        "name": "plain",
+        "data": [
+          41.9,
+          42.8,
+          34.7
+        ]
+      },
+      {
+        "name": "join",
+        "data": [
+          56.2,
+          53.6,
+          60.4
+        ]
+      },
+      {
+        "name": "aggregate",
+        "data": [
+          47.2,
+          42.4,
+          40.7
+        ]
+      },
+      {
+        "name": "write acknowledged",
+        "data": [
+          42.5,
+          38.4,
+          35
+        ],
+        "dash": "6 5"
+      }
+    ]
+  },
+  "backlogChart": {
+    "type": "line",
+    "title": "The 200-row join at 100 writes/s, p50 per 5 seconds",
+    "unit": "ms",
+    "caption": "Every write re-sends the whole 200-row result (about 27 KB). The raw recorder speaks the wire protocol without decoding rows; the SDK client decodes and applies each full result. Same project, same writer.",
+    "x": [
+      "0s",
+      "5s",
+      "10s",
+      "15s",
+      "20s",
+      "25s",
+      "30s",
+      "35s",
+      "40s",
+      "45s",
+      "50s",
+      "55s"
+    ],
+    "series": [
+      {
+        "name": "SDK client, round A",
+        "data": [
+          51.6,
+          50.4,
+          51.7,
+          59.2,
+          60.5,
+          60,
+          61.1,
+          60.8,
+          62.3,
+          70.7,
+          745.8,
+          1787.3
+        ]
+      },
+      {
+        "name": "SDK client, round B",
+        "data": [
+          49.8,
+          50.2,
+          51.8,
+          59.1,
+          59.1,
+          59.3,
+          60,
+          53.4,
+          61.3,
+          61.4,
+          64.4,
+          64.1
+        ]
+      },
+      {
+        "name": "raw recorder, run D1",
+        "data": [
+          40.8,
+          40.2,
+          40.2,
+          48.9,
+          47.8,
+          48.4,
+          50.7,
+          48.8,
+          48.4,
+          48.7,
+          48.9,
+          48.7
+        ],
+        "dash": "6 5"
+      },
+      {
+        "name": "raw recorder, round B",
+        "data": [
+          45.6,
+          45.3,
+          45.8,
+          53.4,
+          53.4,
+          53.2,
+          52.2,
+          53.7,
+          48.7,
+          52.5,
+          52,
+          53.3
+        ],
+        "dash": "6 5"
+      }
+    ]
+  }
+}

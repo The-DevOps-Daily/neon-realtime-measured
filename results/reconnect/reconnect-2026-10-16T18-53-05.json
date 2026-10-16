@@ -1,0 +1,706 @@
+{
+  "code_hash": "25e53b633bab0767",
+  "short": {
+    "plain": {
+      "live_s_after_restore": 2.8,
+      "first_update_after_restore": "rows (130 rows)"
+    },
+    "join": {
+      "live_s_after_restore": 2.84,
+      "first_update_after_restore": "rows (130 rows)"
+    }
+  },
+  "long": {
+    "plain": {
+      "live_s_after_restore": 33.38,
+      "first_update_after_restore": "rows (351 rows)"
+    },
+    "join": {
+      "live_s_after_restore": 48.32,
+      "first_update_after_restore": "rows (378 rows)"
+    }
+  },
+  "events": [
+    {
+      "s": 0.57,
+      "who": "plain",
+      "what": "state live"
+    },
+    {
+      "s": 0.92,
+      "who": "join",
+      "what": "state live"
+    },
+    {
+      "s": 0.92,
+      "who": "setup",
+      "what": "both live: plain 100 rows, join 100 rows"
+    },
+    {
+      "s": 8.92,
+      "who": "net",
+      "what": "short: cut for 5 s"
+    },
+    {
+      "s": 8.94,
+      "who": "join",
+      "what": "state connecting"
+    },
+    {
+      "s": 8.94,
+      "who": "plain",
+      "what": "state connecting"
+    },
+    {
+      "s": 13.93,
+      "who": "net",
+      "what": "short: restored; 10 orders were written during the cut"
+    },
+    {
+      "s": 16.72,
+      "who": "plain",
+      "what": "state live"
+    },
+    {
+      "s": 16.77,
+      "who": "join",
+      "what": "state live"
+    },
+    {
+      "s": 20.6,
+      "who": "plain",
+      "what": "short +2 s: 134 rows, database 134, missing 0, extra 0",
+      "status": "live"
+    },
+    {
+      "s": 20.65,
+      "who": "join",
+      "what": "short +2 s: 134 rows, database 134, missing 0, extra 0",
+      "status": "live"
+    },
+    {
+      "s": 28.65,
+      "who": "net",
+      "what": "long: cut for 75 s"
+    },
+    {
+      "s": 28.65,
+      "who": "join",
+      "what": "state connecting"
+    },
+    {
+      "s": 28.65,
+      "who": "plain",
+      "what": "state connecting"
+    },
+    {
+      "s": 49.85,
+      "who": "join",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 49.85,
+      "who": "plain",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 50.85,
+      "who": "join",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 50.85,
+      "who": "plain",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 51.85,
+      "who": "join",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 51.85,
+      "who": "plain",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 52.85,
+      "who": "join",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 52.85,
+      "who": "plain",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 53.85,
+      "who": "join",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 53.86,
+      "who": "plain",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 54.86,
+      "who": "join",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 54.86,
+      "who": "plain",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 55.86,
+      "who": "join",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 55.86,
+      "who": "plain",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 56.86,
+      "who": "join",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 56.86,
+      "who": "plain",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 57.86,
+      "who": "join",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 57.86,
+      "who": "plain",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 58.86,
+      "who": "join",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 58.86,
+      "who": "plain",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 59.86,
+      "who": "join",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 59.86,
+      "who": "plain",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 60.86,
+      "who": "join",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 60.86,
+      "who": "plain",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 61.86,
+      "who": "join",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 61.86,
+      "who": "plain",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 62.87,
+      "who": "join",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 62.87,
+      "who": "plain",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 63.87,
+      "who": "join",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 63.87,
+      "who": "plain",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 64.87,
+      "who": "join",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 64.87,
+      "who": "plain",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 65.87,
+      "who": "join",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 65.87,
+      "who": "plain",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 66.87,
+      "who": "join",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 66.87,
+      "who": "plain",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 67.87,
+      "who": "join",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 67.87,
+      "who": "plain",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 68.87,
+      "who": "join",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 68.87,
+      "who": "plain",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 69.87,
+      "who": "join",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 69.87,
+      "who": "plain",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 70.87,
+      "who": "join",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 70.87,
+      "who": "plain",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 71.87,
+      "who": "join",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 71.87,
+      "who": "plain",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 72.87,
+      "who": "join",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 72.87,
+      "who": "plain",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 73.87,
+      "who": "join",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 73.88,
+      "who": "plain",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 74.88,
+      "who": "join",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 74.88,
+      "who": "plain",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 75.88,
+      "who": "join",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 75.88,
+      "who": "plain",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 76.88,
+      "who": "join",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 76.88,
+      "who": "plain",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 77.88,
+      "who": "join",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 77.88,
+      "who": "plain",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 78.88,
+      "who": "join",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 78.88,
+      "who": "plain",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 79.88,
+      "who": "join",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 79.88,
+      "who": "plain",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 80.88,
+      "who": "join",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 80.88,
+      "who": "plain",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 81.88,
+      "who": "join",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 81.89,
+      "who": "plain",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 82.89,
+      "who": "join",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 82.89,
+      "who": "plain",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 83.89,
+      "who": "join",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 83.89,
+      "who": "plain",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 84.89,
+      "who": "join",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 84.89,
+      "who": "plain",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 85.89,
+      "who": "join",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 85.89,
+      "who": "plain",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 86.89,
+      "who": "join",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 86.89,
+      "who": "plain",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 87.89,
+      "who": "join",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 87.89,
+      "who": "plain",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 88.89,
+      "who": "join",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 88.89,
+      "who": "plain",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 89.89,
+      "who": "join",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 89.89,
+      "who": "plain",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 90.89,
+      "who": "join",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 90.9,
+      "who": "plain",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 91.9,
+      "who": "join",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 91.9,
+      "who": "plain",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 92.9,
+      "who": "join",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 92.9,
+      "who": "plain",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 93.9,
+      "who": "join",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 93.9,
+      "who": "plain",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 94.9,
+      "who": "join",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 94.9,
+      "who": "plain",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 95.9,
+      "who": "join",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 95.9,
+      "who": "plain",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 96.9,
+      "who": "join",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 96.9,
+      "who": "plain",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 97.9,
+      "who": "join",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 97.9,
+      "who": "plain",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 98.9,
+      "who": "join",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 98.9,
+      "who": "plain",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 99.9,
+      "who": "join",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 99.9,
+      "who": "plain",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 100.91,
+      "who": "join",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 100.91,
+      "who": "plain",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 101.91,
+      "who": "join",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 101.91,
+      "who": "plain",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 102.91,
+      "who": "join",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 102.91,
+      "who": "plain",
+      "what": "renew failed: offline"
+    },
+    {
+      "s": 103.65,
+      "who": "net",
+      "what": "long: restored; 140 orders were written during the cut"
+    },
+    {
+      "s": 136.93,
+      "who": "plain",
+      "what": "renewed"
+    },
+    {
+      "s": 137.02,
+      "who": "plain",
+      "what": "state live"
+    },
+    {
+      "s": 151.87,
+      "who": "join",
+      "what": "renewed"
+    },
+    {
+      "s": 151.97,
+      "who": "join",
+      "what": "state live"
+    },
+    {
+      "s": 153.92,
+      "who": "plain",
+      "what": "renewed"
+    },
+    {
+      "s": 153.94,
+      "who": "join",
+      "what": "renewed"
+    },
+    {
+      "s": 156.06,
+      "who": "plain",
+      "what": "long +2 s: 382 rows, database 382, missing 0, extra 0",
+      "status": "live"
+    },
+    {
+      "s": 156.14,
+      "who": "join",
+      "what": "long +2 s: 382 rows, database 382, missing 0, extra 0",
+      "status": "live"
+    },
+    {
+      "s": 159.73,
+      "who": "plain",
+      "what": "final: 382 rows, database 382, missing 0, extra 0",
+      "status": "live"
+    },
+    {
+      "s": 159.78,
+      "who": "join",
+      "what": "final: 382 rows, database 382, missing 0, extra 0",
+      "status": "live"
+    },
+    {
+      "s": 159.79,
+      "who": "plain",
+      "what": "state closed"
+    },
+    {
+      "s": 159.79,
+      "who": "join",
+      "what": "state closed"
+    }
+  ]
+}

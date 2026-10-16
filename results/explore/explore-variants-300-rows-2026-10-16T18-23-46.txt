@@ -1,0 +1,22 @@
+board: open orders (members join + status filter): live
+board: customers (members join): live
+board: counts per status (members join + GROUP BY): live
+join orders-customers, both pinned to the store: live
+plain + ORDER BY id, no LIMIT: live
+plain + LIMIT 50, no ORDER BY: live
+SELECT DISTINCT status: live
+plain filter (control): live
+
+store 905: 300 prefilled orders
+┌─────────┬──────────────────────────────────────────────────────┬──────────────────────┬──────────────────────┬──────────────────────┐
+│ (index) │ variant                                              │ order insert         │ order status -> done │ customer insert      │
+├─────────┼──────────────────────────────────────────────────────┼──────────────────────┼──────────────────────┼──────────────────────┤
+│ 0       │ 'board: open orders (members join + status filter)'  │ 'incremental, 396 B' │ 'incremental, 354 B' │ 'nothing'            │
+│ 1       │ 'board: customers (members join)'                    │ 'nothing'            │ 'nothing'            │ 'incremental, 389 B' │
+│ 2       │ 'board: counts per status (members join + GROUP BY)' │ 'reset, 885 B'       │ 'reset, 986 B'       │ 'nothing'            │
+│ 3       │ 'join orders-customers, both pinned to the store'    │ 'reset, 37180 B'     │ 'reset, 37175 B'     │ 'reset, 37175 B'     │
+│ 4       │ 'plain + ORDER BY id, no LIMIT'                      │ 'reset, 33104 B'     │ 'reset, 33099 B'     │ 'nothing'            │
+│ 5       │ 'plain + LIMIT 50, no ORDER BY'                      │ 'reset, 5978 B'      │ 'reset, 5972 B'      │ 'nothing'            │
+│ 6       │ 'SELECT DISTINCT status'                             │ 'reset, 868 B'       │ 'reset, 965 B'       │ 'nothing'            │
+│ 7       │ 'plain filter (control)'                             │ 'incremental, 387 B' │ 'incremental, 388 B' │ 'nothing'            │
+└─────────┴──────────────────────────────────────────────────────┴──────────────────────┴──────────────────────┴──────────────────────┘

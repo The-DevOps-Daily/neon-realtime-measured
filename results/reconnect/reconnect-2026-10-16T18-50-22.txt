@@ -1,0 +1,157 @@
+   0.57s  plain state live 
+   0.92s  join  state live 
+   0.92s  setup both live: plain 100 rows, join 100 rows 
+   8.92s  net   short: cut for 5 s 
+   8.94s  join  state connecting 
+   8.94s  plain state connecting 
+  13.93s  net   short: restored; 10 orders were written during the cut 
+  16.72s  plain state live 
+  16.77s  join  state live 
+  20.60s  plain short +2 s: 134 rows, database 134, missing 0, extra 0 {"status":"live"}
+  20.65s  join  short +2 s: 134 rows, database 134, missing 0, extra 0 {"status":"live"}
+  28.65s  net   long: cut for 75 s 
+  28.65s  join  state connecting 
+  28.65s  plain state connecting 
+  49.85s  join  renew failed: offline 
+  49.85s  plain renew failed: offline 
+  50.85s  join  renew failed: offline 
+  50.85s  plain renew failed: offline 
+  51.85s  join  renew failed: offline 
+  51.85s  plain renew failed: offline 
+  52.85s  join  renew failed: offline 
+  52.85s  plain renew failed: offline 
+  53.85s  join  renew failed: offline 
+  53.86s  plain renew failed: offline 
+  54.86s  join  renew failed: offline 
+  54.86s  plain renew failed: offline 
+  55.86s  join  renew failed: offline 
+  55.86s  plain renew failed: offline 
+  56.86s  join  renew failed: offline 
+  56.86s  plain renew failed: offline 
+  57.86s  join  renew failed: offline 
+  57.86s  plain renew failed: offline 
+  58.86s  join  renew failed: offline 
+  58.86s  plain renew failed: offline 
+  59.86s  join  renew failed: offline 
+  59.86s  plain renew failed: offline 
+  60.86s  join  renew failed: offline 
+  60.86s  plain renew failed: offline 
+  61.86s  join  renew failed: offline 
+  61.86s  plain renew failed: offline 
+  62.87s  join  renew failed: offline 
+  62.87s  plain renew failed: offline 
+  63.87s  join  renew failed: offline 
+  63.87s  plain renew failed: offline 
+  64.87s  join  renew failed: offline 
+  64.87s  plain renew failed: offline 
+  65.87s  join  renew failed: offline 
+  65.87s  plain renew failed: offline 
+  66.87s  join  renew failed: offline 
+  66.87s  plain renew failed: offline 
+  67.87s  join  renew failed: offline 
+  67.87s  plain renew failed: offline 
+  68.87s  join  renew failed: offline 
+  68.87s  plain renew failed: offline 
+  69.87s  join  renew failed: offline 
+  69.87s  plain renew failed: offline 
+  70.87s  join  renew failed: offline 
+  70.87s  plain renew failed: offline 
+  71.87s  join  renew failed: offline 
+  71.87s  plain renew failed: offline 
+  72.87s  join  renew failed: offline 
+  72.87s  plain renew failed: offline 
+  73.87s  join  renew failed: offline 
+  73.88s  plain renew failed: offline 
+  74.88s  join  renew failed: offline 
+  74.88s  plain renew failed: offline 
+  75.88s  join  renew failed: offline 
+  75.88s  plain renew failed: offline 
+  76.88s  join  renew failed: offline 
+  76.88s  plain renew failed: offline 
+  77.88s  join  renew failed: offline 
+  77.88s  plain renew failed: offline 
+  78.88s  join  renew failed: offline 
+  78.88s  plain renew failed: offline 
+  79.88s  join  renew failed: offline 
+  79.88s  plain renew failed: offline 
+  80.88s  join  renew failed: offline 
+  80.88s  plain renew failed: offline 
+  81.88s  join  renew failed: offline 
+  81.89s  plain renew failed: offline 
+  82.89s  join  renew failed: offline 
+  82.89s  plain renew failed: offline 
+  83.89s  join  renew failed: offline 
+  83.89s  plain renew failed: offline 
+  84.89s  join  renew failed: offline 
+  84.89s  plain renew failed: offline 
+  85.89s  join  renew failed: offline 
+  85.89s  plain renew failed: offline 
+  86.89s  join  renew failed: offline 
+  86.89s  plain renew failed: offline 
+  87.89s  join  renew failed: offline 
+  87.89s  plain renew failed: offline 
+  88.89s  join  renew failed: offline 
+  88.89s  plain renew failed: offline 
+  89.89s  join  renew failed: offline 
+  89.89s  plain renew failed: offline 
+  90.89s  join  renew failed: offline 
+  90.90s  plain renew failed: offline 
+  91.90s  join  renew failed: offline 
+  91.90s  plain renew failed: offline 
+  92.90s  join  renew failed: offline 
+  92.90s  plain renew failed: offline 
+  93.90s  join  renew failed: offline 
+  93.90s  plain renew failed: offline 
+  94.90s  join  renew failed: offline 
+  94.90s  plain renew failed: offline 
+  95.90s  join  renew failed: offline 
+  95.90s  plain renew failed: offline 
+  96.90s  join  renew failed: offline 
+  96.90s  plain renew failed: offline 
+  97.90s  join  renew failed: offline 
+  97.90s  plain renew failed: offline 
+  98.90s  join  renew failed: offline 
+  98.90s  plain renew failed: offline 
+  99.90s  join  renew failed: offline 
+  99.90s  plain renew failed: offline 
+ 100.91s  join  renew failed: offline 
+ 100.91s  plain renew failed: offline 
+ 101.91s  join  renew failed: offline 
+ 101.91s  plain renew failed: offline 
+ 102.91s  join  renew failed: offline 
+ 102.91s  plain renew failed: offline 
+ 103.65s  net   long: restored; 140 orders were written during the cut 
+ 136.93s  plain renewed 
+ 137.02s  plain state live 
+ 151.87s  join  renewed 
+ 151.97s  join  state live 
+ 153.92s  plain renewed 
+ 153.94s  join  renewed 
+ 156.06s  plain long +2 s: 382 rows, database 382, missing 0, extra 0 {"status":"live"}
+ 156.14s  join  long +2 s: 382 rows, database 382, missing 0, extra 0 {"status":"live"}
+ 159.73s  plain final: 382 rows, database 382, missing 0, extra 0 {"status":"live"}
+ 159.78s  join  final: 382 rows, database 382, missing 0, extra 0 {"status":"live"}
+ 159.79s  plain state closed 
+ 159.79s  join  state closed 
+{
+  "short": {
+    "plain": {
+      "live_s_after_restore": 2.8,
+      "first_update_after_restore": "rows (130 rows)"
+    },
+    "join": {
+      "live_s_after_restore": 2.84,
+      "first_update_after_restore": "rows (130 rows)"
+    }
+  },
+  "long": {
+    "plain": {
+      "live_s_after_restore": 33.38,
+      "first_update_after_restore": "rows (351 rows)"
+    },
+    "join": {
+      "live_s_after_restore": 48.32,
+      "first_update_after_restore": "rows (378 rows)"
+    }
+  }
+}

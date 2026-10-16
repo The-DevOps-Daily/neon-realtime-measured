@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Live order board</title>
+    <style>
+      :root { font-family: system-ui, sans-serif; color: #1c2024; background: #f6f7f9; }
+      body { margin: 0; padding: 16px; }
+      header { display: flex; gap: 16px; align-items: baseline; flex-wrap: wrap; }
+      .stats { display: flex; gap: 12px; flex-wrap: wrap; }
+      .stat { background: #fff; border: 1px solid #dde1e6; border-radius: 8px; padding: 8px 12px; }
+      .columns { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin-top: 16px; }
+      .column { background: #eef0f3; border-radius: 8px; padding: 8px; min-height: 120px; }
+      .card { background: #fff; border: 1px solid #dde1e6; border-radius: 6px; padding: 8px; margin: 6px 0; }
+      .card.pending { opacity: 0.6; }
+      button { cursor: pointer; }
+      .status { font-size: 12px; color: #60646c; }
+      form { display: grid; gap: 8px; max-width: 320px; }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

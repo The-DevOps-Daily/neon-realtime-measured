@@ -1,0 +1,3 @@
+[2026-10-16T14:47:47.203Z] insert order { id: 3, txid: '1056' }
+[2026-10-16T14:47:50.256Z] update order { id: 1, txid: '1057' }
+[2026-10-16T14:47:53.306Z] insert + update in one transaction { new_id: 4, txid: '1058' }

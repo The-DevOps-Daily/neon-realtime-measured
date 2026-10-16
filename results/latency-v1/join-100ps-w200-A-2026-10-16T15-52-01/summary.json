@@ -1,0 +1,69 @@
+{
+  "run_id": "join-100ps-w200-A-2026-10-16T15-52-01",
+  "code_hash": "9bf5cd42f22ec314",
+  "shape": "join",
+  "rate": 100,
+  "window": 200,
+  "label": "A",
+  "duration_s": 60,
+  "writes": 6000,
+  "errors": 0,
+  "delivered": 6000,
+  "missing": 0,
+  "consistency_mismatches": 0,
+  "mismatch_examples": [],
+  "delivered_via_reset": 6000,
+  "updates": {
+    "changes": 0,
+    "rows": 5996
+  },
+  "resets": 6000,
+  "latency_ms": {
+    "p50": 64.6,
+    "p90": 1899.5,
+    "p99": 3244.6,
+    "max": 3371.7
+  },
+  "after_commit_ack_ms": {
+    "p50": 27.5,
+    "p99": 3209.5
+  },
+  "write_ms": {
+    "p50": 36.8,
+    "p99": 43.8
+  },
+  "select1_rtt_ms_p50": 40.2,
+  "ws_rtt_ms_p50": 42.3,
+  "est_server_side_ms_p50": 23.3,
+  "wire_bytes_during_writes": 164205136,
+  "wire_bytes_per_write": 27368,
+  "wire_mb_per_s": 2.592,
+  "time_to_first_result_ms": 546.5,
+  "writes_queued_in_pool": 0,
+  "eld_p99_ms": {
+    "subscriber": 70.5,
+    "writer": 11.5
+  },
+  "loadavg_at_start": [
+    0.41,
+    1.16,
+    1.77
+  ],
+  "server_errors": [],
+  "slow_episodes": [
+    {
+      "start": 1792165964043.6794,
+      "writes": 2,
+      "worst_ms": 371,
+      "worst_ack_ms": 330.4,
+      "cause": "write path (slow commit ack)"
+    },
+    {
+      "start": 1792165977395.2495,
+      "writes": 1542,
+      "worst_ms": 3371.7,
+      "worst_ack_ms": 47.4,
+      "cause": "update path"
+    }
+  ]
+}

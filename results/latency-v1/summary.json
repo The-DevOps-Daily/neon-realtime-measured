@@ -1,0 +1,1254 @@
+[
+  {
+    "run_id": "aggregate-100ps-w200-A-2026-10-16T15-53-26",
+    "code_hash": "9bf5cd42f22ec314",
+    "shape": "aggregate",
+    "rate": 100,
+    "window": 200,
+    "label": "A",
+    "duration_s": 60,
+    "writes": 6000,
+    "errors": 0,
+    "delivered": 6000,
+    "missing": 0,
+    "consistency_mismatches": 0,
+    "mismatch_examples": [],
+    "delivered_via_reset": 6000,
+    "updates": {
+      "changes": 0,
+      "rows": 6001
+    },
+    "resets": 6000,
+    "latency_ms": {
+      "p50": 40.6,
+      "p90": 43.5,
+      "p99": 57.6,
+      "max": 303.3
+    },
+    "after_commit_ack_ms": {
+      "p50": 7.2,
+      "p99": 23
+    },
+    "write_ms": {
+      "p50": 33.1,
+      "p99": 44.4
+    },
+    "select1_rtt_ms_p50": 38.5,
+    "ws_rtt_ms_p50": 41.7,
+    "est_server_side_ms_p50": 0.5,
+    "wire_bytes_during_writes": 5621154,
+    "wire_bytes_per_write": 937,
+    "wire_mb_per_s": 0.094,
+    "time_to_first_result_ms": 556.3,
+    "writes_queued_in_pool": 0,
+    "eld_p99_ms": {
+      "subscriber": 11.6,
+      "writer": 11.2
+    },
+    "loadavg_at_start": [
+      0.91,
+      1.14,
+      1.71
+    ],
+    "server_errors": [],
+    "slow_episodes": [
+      {
+        "start": 1792166036617.3203,
+        "writes": 1,
+        "worst_ms": 303.3,
+        "worst_ack_ms": 301.1,
+        "cause": "write path (slow commit ack)"
+      }
+    ]
+  },
+  {
+    "run_id": "aggregate-100ps-w200-B-2026-10-16T16-50-38",
+    "code_hash": "9bf5cd42f22ec314",
+    "shape": "aggregate",
+    "rate": 100,
+    "window": 200,
+    "label": "B",
+    "duration_s": 60,
+    "writes": 6000,
+    "errors": 0,
+    "delivered": 6000,
+    "missing": 0,
+    "consistency_mismatches": 0,
+    "mismatch_examples": [],
+    "delivered_via_reset": 6000,
+    "updates": {
+      "changes": 0,
+      "rows": 5992
+    },
+    "resets": 6000,
+    "latency_ms": {
+      "p50": 40.6,
+      "p90": 44.9,
+      "p99": 64.4,
+      "max": 303.9
+    },
+    "after_commit_ack_ms": {
+      "p50": 6.3,
+      "p99": 25.7
+    },
+    "write_ms": {
+      "p50": 35.8,
+      "p99": 43.5
+    },
+    "select1_rtt_ms_p50": 33,
+    "ws_rtt_ms_p50": 40.8,
+    "est_server_side_ms_p50": 3.7,
+    "wire_bytes_during_writes": 5615007,
+    "wire_bytes_per_write": 936,
+    "wire_mb_per_s": 0.094,
+    "time_to_first_result_ms": 558.1,
+    "writes_queued_in_pool": 4,
+    "eld_p99_ms": {
+      "subscriber": 17.3,
+      "writer": 15
+    },
+    "loadavg_at_start": [
+      1.99,
+      1.78,
+      3.34
+    ],
+    "server_errors": [],
+    "slow_episodes": [
+      {
+        "start": 1792169474080.1182,
+        "writes": 1,
+        "worst_ms": 303.9,
+        "worst_ack_ms": 300.3,
+        "cause": "write path (slow commit ack)"
+      }
+    ]
+  },
+  {
+    "run_id": "aggregate-10ps-w200-A-2026-10-16T15-47-11",
+    "code_hash": "9bf5cd42f22ec314",
+    "shape": "aggregate",
+    "rate": 10,
+    "window": 200,
+    "label": "A",
+    "duration_s": 180,
+    "writes": 1800,
+    "errors": 0,
+    "delivered": 1800,
+    "missing": 0,
+    "consistency_mismatches": 0,
+    "mismatch_examples": [],
+    "delivered_via_reset": 1800,
+    "updates": {
+      "changes": 0,
+      "rows": 1786
+    },
+    "resets": 1785,
+    "latency_ms": {
+      "p50": 41.6,
+      "p90": 46.4,
+      "p99": 79.3,
+      "max": 1452.2
+    },
+    "after_commit_ack_ms": {
+      "p50": 0.2,
+      "p99": 38
+    },
+    "write_ms": {
+      "p50": 41.5,
+      "p99": 46.8
+    },
+    "select1_rtt_ms_p50": 39.7,
+    "ws_rtt_ms_p50": 37.6,
+    "est_server_side_ms_p50": 2.9,
+    "wire_bytes_during_writes": 1673402,
+    "wire_bytes_per_write": 930,
+    "wire_mb_per_s": 0.009,
+    "time_to_first_result_ms": 606.1,
+    "writes_queued_in_pool": 0,
+    "eld_p99_ms": {
+      "subscriber": 11.6,
+      "writer": 11.6
+    },
+    "loadavg_at_start": [
+      0.74,
+      2.35,
+      2.26
+    ],
+    "server_errors": [
+      {
+        "t": 1792165805737.7153,
+        "type": "connection_error",
+        "code": "backend_session_lost",
+        "message": "live query session ended; reconnect required"
+      }
+    ],
+    "slow_episodes": [
+      {
+        "start": 1792165805730.115,
+        "writes": 12,
+        "worst_ms": 1452.2,
+        "worst_ack_ms": 45.3,
+        "cause": "server ended the live query session"
+      }
+    ]
+  },
+  {
+    "run_id": "aggregate-10ps-w200-B-2026-10-16T16-40-22",
+    "code_hash": "9bf5cd42f22ec314",
+    "shape": "aggregate",
+    "rate": 10,
+    "window": 200,
+    "label": "B",
+    "duration_s": 180,
+    "writes": 1800,
+    "errors": 0,
+    "delivered": 1800,
+    "missing": 0,
+    "consistency_mismatches": 0,
+    "mismatch_examples": [],
+    "delivered_via_reset": 1800,
+    "updates": {
+      "changes": 0,
+      "rows": 1790
+    },
+    "resets": 1788,
+    "latency_ms": {
+      "p50": 41.3,
+      "p90": 45.2,
+      "p99": 81.5,
+      "max": 1197
+    },
+    "after_commit_ack_ms": {
+      "p50": 3.6,
+      "p99": 45.2
+    },
+    "write_ms": {
+      "p50": 36.9,
+      "p99": 46.4
+    },
+    "select1_rtt_ms_p50": 38.9,
+    "ws_rtt_ms_p50": 35,
+    "est_server_side_ms_p50": 4.4,
+    "wire_bytes_during_writes": 1673327,
+    "wire_bytes_per_write": 930,
+    "wire_mb_per_s": 0.009,
+    "time_to_first_result_ms": 858.3,
+    "writes_queued_in_pool": 0,
+    "eld_p99_ms": {
+      "subscriber": 13.1,
+      "writer": 12.5
+    },
+    "loadavg_at_start": [
+      2.49,
+      5.35,
+      5.49
+    ],
+    "server_errors": [
+      {
+        "t": 1792168961799.9922,
+        "type": "connection_error",
+        "code": "backend_session_lost",
+        "message": "live query session ended; reconnect required"
+      }
+    ],
+    "slow_episodes": [
+      {
+        "start": 1792168961809.9517,
+        "writes": 9,
+        "worst_ms": 1197,
+        "worst_ack_ms": 40,
+        "cause": "server ended the live query session"
+      }
+    ]
+  },
+  {
+    "run_id": "aggregate-1ps-w200-A-2026-10-16T15-22-36",
+    "code_hash": "9bf5cd42f22ec314",
+    "shape": "aggregate",
+    "rate": 1,
+    "window": 200,
+    "label": "A",
+    "duration_s": 600,
+    "writes": 600,
+    "errors": 0,
+    "delivered": 600,
+    "missing": 0,
+    "consistency_mismatches": 0,
+    "mismatch_examples": [],
+    "delivered_via_reset": 600,
+    "updates": {
+      "changes": 0,
+      "rows": 601
+    },
+    "resets": 600,
+    "latency_ms": {
+      "p50": 43.9,
+      "p90": 47.8,
+      "p99": 86.1,
+      "max": 87.6
+    },
+    "after_commit_ack_ms": {
+      "p50": 3.8,
+      "p99": 46.9
+    },
+    "write_ms": {
+      "p50": 40.2,
+      "p99": 45.6
+    },
+    "select1_rtt_ms_p50": 35.2,
+    "ws_rtt_ms_p50": 35.2,
+    "est_server_side_ms_p50": 8.7,
+    "wire_bytes_during_writes": 594608,
+    "wire_bytes_per_write": 991,
+    "wire_mb_per_s": 0.001,
+    "time_to_first_result_ms": 648.7,
+    "writes_queued_in_pool": 0,
+    "eld_p99_ms": {
+      "subscriber": 10.9,
+      "writer": 10.9
+    },
+    "loadavg_at_start": [
+      0.36,
+      0.51,
+      1.81
+    ],
+    "server_errors": [],
+    "slow_episodes": []
+  },
+  {
+    "run_id": "aggregate-1ps-w200-B-2026-10-16T15-54-51",
+    "code_hash": "9bf5cd42f22ec314",
+    "shape": "aggregate",
+    "rate": 1,
+    "window": 200,
+    "label": "B",
+    "duration_s": 600,
+    "writes": 600,
+    "errors": 0,
+    "delivered": 600,
+    "missing": 0,
+    "consistency_mismatches": 0,
+    "mismatch_examples": [],
+    "delivered_via_reset": 600,
+    "updates": {
+      "changes": 0,
+      "rows": 600
+    },
+    "resets": 597,
+    "latency_ms": {
+      "p50": 43.6,
+      "p90": 51.2,
+      "p99": 87.1,
+      "max": 1368.7
+    },
+    "after_commit_ack_ms": {
+      "p50": 3,
+      "p99": 47.2
+    },
+    "write_ms": {
+      "p50": 41.2,
+      "p99": 48.9
+    },
+    "select1_rtt_ms_p50": 40.4,
+    "ws_rtt_ms_p50": 35.5,
+    "est_server_side_ms_p50": 5.7,
+    "wire_bytes_during_writes": 594951,
+    "wire_bytes_per_write": 992,
+    "wire_mb_per_s": 0.001,
+    "time_to_first_result_ms": 393.4,
+    "writes_queued_in_pool": 0,
+    "eld_p99_ms": {
+      "subscriber": 13.1,
+      "writer": 12.6
+    },
+    "loadavg_at_start": [
+      0.65,
+      1,
+      1.6
+    ],
+    "server_errors": [
+      {
+        "t": 1792166105820.4792,
+        "type": "connection_error",
+        "code": "backend_session_lost",
+        "message": "live query session ended; reconnect required"
+      },
+      {
+        "t": 1792166465911.8904,
+        "type": "connection_error",
+        "code": "backend_session_lost",
+        "message": "live query session ended; reconnect required"
+      }
+    ],
+    "slow_episodes": [
+      {
+        "start": 1792166106165.4353,
+        "writes": 1,
+        "worst_ms": 564.6,
+        "worst_ack_ms": 38.9,
+        "cause": "server ended the live query session"
+      },
+      {
+        "start": 1792166466164.84,
+        "writes": 2,
+        "worst_ms": 1368.7,
+        "worst_ack_ms": 40.9,
+        "cause": "server ended the live query session"
+      }
+    ]
+  },
+  {
+    "run_id": "join-100ps-w200-A-2026-10-16T15-52-01",
+    "code_hash": "9bf5cd42f22ec314",
+    "shape": "join",
+    "rate": 100,
+    "window": 200,
+    "label": "A",
+    "duration_s": 60,
+    "writes": 6000,
+    "errors": 0,
+    "delivered": 6000,
+    "missing": 0,
+    "consistency_mismatches": 0,
+    "mismatch_examples": [],
+    "delivered_via_reset": 6000,
+    "updates": {
+      "changes": 0,
+      "rows": 5996
+    },
+    "resets": 6000,
+    "latency_ms": {
+      "p50": 64.6,
+      "p90": 1899.5,
+      "p99": 3244.6,
+      "max": 3371.7
+    },
+    "after_commit_ack_ms": {
+      "p50": 27.5,
+      "p99": 3209.5
+    },
+    "write_ms": {
+      "p50": 36.8,
+      "p99": 43.8
+    },
+    "select1_rtt_ms_p50": 40.2,
+    "ws_rtt_ms_p50": 42.3,
+    "est_server_side_ms_p50": 23.3,
+    "wire_bytes_during_writes": 164205136,
+    "wire_bytes_per_write": 27368,
+    "wire_mb_per_s": 2.592,
+    "time_to_first_result_ms": 546.5,
+    "writes_queued_in_pool": 0,
+    "eld_p99_ms": {
+      "subscriber": 70.5,
+      "writer": 11.5
+    },
+    "loadavg_at_start": [
+      0.41,
+      1.16,
+      1.77
+    ],
+    "server_errors": [],
+    "slow_episodes": [
+      {
+        "start": 1792165964043.6794,
+        "writes": 2,
+        "worst_ms": 371,
+        "worst_ack_ms": 330.4,
+        "cause": "write path (slow commit ack)"
+      },
+      {
+        "start": 1792165977395.2495,
+        "writes": 1542,
+        "worst_ms": 3371.7,
+        "worst_ack_ms": 47.4,
+        "cause": "update path"
+      }
+    ]
+  },
+  {
+    "run_id": "join-100ps-w200-B-2026-10-16T16-53-31",
+    "code_hash": "9bf5cd42f22ec314",
+    "shape": "join",
+    "rate": 100,
+    "window": 200,
+    "label": "B",
+    "duration_s": 60,
+    "writes": 6000,
+    "errors": 0,
+    "delivered": 6000,
+    "missing": 0,
+    "consistency_mismatches": 0,
+    "mismatch_examples": [],
+    "delivered_via_reset": 6000,
+    "updates": {
+      "changes": 0,
+      "rows": 2468
+    },
+    "resets": 2635,
+    "latency_ms": {
+      "p50": 16193.2,
+      "p90": 30820.7,
+      "p99": 34139.4,
+      "max": 34740.5
+    },
+    "after_commit_ack_ms": {
+      "p50": 16108.4,
+      "p99": 34096.1
+    },
+    "write_ms": {
+      "p50": 37.9,
+      "p99": 2099.8
+    },
+    "select1_rtt_ms_p50": 33.4,
+    "ws_rtt_ms_p50": 39.9,
+    "est_server_side_ms_p50": 16156.6,
+    "wire_bytes_during_writes": 67486724,
+    "wire_bytes_per_write": 11248,
+    "wire_mb_per_s": 1.105,
+    "time_to_first_result_ms": 858.3,
+    "writes_queued_in_pool": 1217,
+    "eld_p99_ms": {
+      "subscriber": 903.3,
+      "writer": 27.1
+    },
+    "loadavg_at_start": [
+      1.53,
+      1.83,
+      3.11
+    ],
+    "server_errors": [
+      {
+        "t": 1792169621902.4023,
+        "type": "connection_error",
+        "code": "backend_session_lost",
+        "message": "live query session ended; reconnect required"
+      },
+      {
+        "t": 1792169686048.158,
+        "type": "connection_error",
+        "code": "heartbeat_timeout",
+        "message": "heartbeat timeout"
+      }
+    ],
+    "slow_episodes": [
+      {
+        "start": 1792169626280.7046,
+        "writes": 2889,
+        "worst_ms": 34740.5,
+        "worst_ack_ms": 5810.7,
+        "cause": "write path (slow commit ack)"
+      },
+      {
+        "start": 1792169660938.8914,
+        "writes": 3102,
+        "worst_ms": 26345.4,
+        "worst_ack_ms": 2228.8,
+        "cause": "write path (slow commit ack)"
+      }
+    ]
+  },
+  {
+    "run_id": "join-10ps-w200-A-2026-10-16T15-43-46",
+    "code_hash": "9bf5cd42f22ec314",
+    "shape": "join",
+    "rate": 10,
+    "window": 200,
+    "label": "A",
+    "duration_s": 180,
+    "writes": 1800,
+    "errors": 0,
+    "delivered": 1800,
+    "missing": 0,
+    "consistency_mismatches": 0,
+    "mismatch_examples": [],
+    "delivered_via_reset": 1800,
+    "updates": {
+      "changes": 0,
+      "rows": 1762
+    },
+    "resets": 1789,
+    "latency_ms": {
+      "p50": 52.4,
+      "p90": 62.3,
+      "p99": 2960.4,
+      "max": 3972.5
+    },
+    "after_commit_ack_ms": {
+      "p50": 9.4,
+      "p99": 2278
+    },
+    "write_ms": {
+      "p50": 44.1,
+      "p99": 1785.2
+    },
+    "select1_rtt_ms_p50": 31.9,
+    "ws_rtt_ms_p50": 33.4,
+    "est_server_side_ms_p50": 19.8,
+    "wire_bytes_during_writes": 48071013,
+    "wire_bytes_per_write": 26706,
+    "wire_mb_per_s": 0.267,
+    "time_to_first_result_ms": 628.6,
+    "writes_queued_in_pool": 52,
+    "eld_p99_ms": {
+      "subscriber": 18.6,
+      "writer": 12.1
+    },
+    "loadavg_at_start": [
+      2.48,
+      3.53,
+      2.51
+    ],
+    "server_errors": [
+      {
+        "t": 1792165565689.1104,
+        "type": "connection_error",
+        "code": "backend_session_lost",
+        "message": "live query session ended; reconnect required"
+      }
+    ],
+    "slow_episodes": [
+      {
+        "start": 1792165458968.3345,
+        "writes": 95,
+        "worst_ms": 3972.5,
+        "worst_ack_ms": 3669.7,
+        "cause": "write path (slow commit ack)"
+      },
+      {
+        "start": 1792165565668.533,
+        "writes": 9,
+        "worst_ms": 1145.9,
+        "worst_ack_ms": 44.1,
+        "cause": "server ended the live query session"
+      }
+    ]
+  },
+  {
+    "run_id": "join-10ps-w200-B-2026-10-16T16-47-13",
+    "code_hash": "9bf5cd42f22ec314",
+    "shape": "join",
+    "rate": 10,
+    "window": 200,
+    "label": "B",
+    "duration_s": 180,
+    "writes": 1800,
+    "errors": 0,
+    "delivered": 1800,
+    "missing": 0,
+    "consistency_mismatches": 0,
+    "mismatch_examples": [],
+    "delivered_via_reset": 1800,
+    "updates": {
+      "changes": 0,
+      "rows": 1755
+    },
+    "resets": 1788,
+    "latency_ms": {
+      "p50": 54.5,
+      "p90": 65.8,
+      "p99": 522.2,
+      "max": 4173.2
+    },
+    "after_commit_ack_ms": {
+      "p50": 17.4,
+      "p99": 119.4
+    },
+    "write_ms": {
+      "p50": 37.2,
+      "p99": 368.9
+    },
+    "select1_rtt_ms_p50": 31.6,
+    "ws_rtt_ms_p50": 40.8,
+    "est_server_side_ms_p50": 18.3,
+    "wire_bytes_during_writes": 47878394,
+    "wire_bytes_per_write": 26599,
+    "wire_mb_per_s": 0.266,
+    "time_to_first_result_ms": 708.2,
+    "writes_queued_in_pool": 62,
+    "eld_p99_ms": {
+      "subscriber": 21.3,
+      "writer": 13.1
+    },
+    "loadavg_at_start": [
+      0.71,
+      1.78,
+      3.75
+    ],
+    "server_errors": [
+      {
+        "t": 1792169321822.3218,
+        "type": "connection_error",
+        "code": "backend_session_lost",
+        "message": "live query session ended; reconnect required"
+      }
+    ],
+    "slow_episodes": [
+      {
+        "start": 1792169321812.3472,
+        "writes": 10,
+        "worst_ms": 1289.8,
+        "worst_ack_ms": 38.2,
+        "cause": "server ended the live query session"
+      },
+      {
+        "start": 1792169359912.159,
+        "writes": 43,
+        "worst_ms": 4173.2,
+        "worst_ack_ms": 2347.8,
+        "cause": "write path (slow commit ack)"
+      }
+    ]
+  },
+  {
+    "run_id": "join-1ps-w200-A-2026-10-16T15-12-12",
+    "code_hash": "9bf5cd42f22ec314",
+    "shape": "join",
+    "rate": 1,
+    "window": 200,
+    "label": "A",
+    "duration_s": 600,
+    "writes": 600,
+    "errors": 0,
+    "delivered": 600,
+    "missing": 0,
+    "consistency_mismatches": 0,
+    "mismatch_examples": [],
+    "delivered_via_reset": 600,
+    "updates": {
+      "changes": 0,
+      "rows": 601
+    },
+    "resets": 600,
+    "latency_ms": {
+      "p50": 55.6,
+      "p90": 64.1,
+      "p99": 99.9,
+      "max": 2251.1
+    },
+    "after_commit_ack_ms": {
+      "p50": 17.5,
+      "p99": 58.3
+    },
+    "write_ms": {
+      "p50": 38.8,
+      "p99": 48.3
+    },
+    "select1_rtt_ms_p50": 31.6,
+    "ws_rtt_ms_p50": 42.3,
+    "est_server_side_ms_p50": 18.6,
+    "wire_bytes_during_writes": 16225951,
+    "wire_bytes_per_write": 27043,
+    "wire_mb_per_s": 0.027,
+    "time_to_first_result_ms": 684.5,
+    "writes_queued_in_pool": 1,
+    "eld_p99_ms": {
+      "subscriber": 12.6,
+      "writer": 11.3
+    },
+    "loadavg_at_start": [
+      0.61,
+      1.28,
+      3.2
+    ],
+    "server_errors": [],
+    "slow_episodes": [
+      {
+        "start": 1792163884391.9092,
+        "writes": 1,
+        "worst_ms": 302.6,
+        "worst_ack_ms": 36.2,
+        "cause": "update path"
+      },
+      {
+        "start": 1792163889392.1465,
+        "writes": 2,
+        "worst_ms": 2251.1,
+        "worst_ack_ms": 443.2,
+        "cause": "write path (slow commit ack)"
+      },
+      {
+        "start": 1792163897392.1843,
+        "writes": 1,
+        "worst_ms": 356.5,
+        "worst_ack_ms": 44.7,
+        "cause": "update path"
+      }
+    ]
+  },
+  {
+    "run_id": "join-1ps-w200-B-2026-10-16T16-22-50",
+    "code_hash": "9bf5cd42f22ec314",
+    "shape": "join",
+    "rate": 1,
+    "window": 200,
+    "label": "B",
+    "duration_s": 600,
+    "writes": 600,
+    "errors": 0,
+    "delivered": 600,
+    "missing": 0,
+    "consistency_mismatches": 0,
+    "mismatch_examples": [],
+    "delivered_via_reset": 600,
+    "updates": {
+      "changes": 0,
+      "rows": 600
+    },
+    "resets": 600,
+    "latency_ms": {
+      "p50": 58.7,
+      "p90": 91.5,
+      "p99": 2549.9,
+      "max": 6359.6
+    },
+    "after_commit_ack_ms": {
+      "p50": 21,
+      "p99": 2166.1
+    },
+    "write_ms": {
+      "p50": 37.8,
+      "p99": 619.4
+    },
+    "select1_rtt_ms_p50": 31.5,
+    "ws_rtt_ms_p50": 40,
+    "est_server_side_ms_p50": 23,
+    "wire_bytes_during_writes": 16320765,
+    "wire_bytes_per_write": 27201,
+    "wire_mb_per_s": 0.027,
+    "time_to_first_result_ms": 894.3,
+    "writes_queued_in_pool": 7,
+    "eld_p99_ms": {
+      "subscriber": 15.5,
+      "writer": 14.2
+    },
+    "loadavg_at_start": [
+      2.45,
+      6.49,
+      5.33
+    ],
+    "server_errors": [],
+    "slow_episodes": [
+      {
+        "start": 1792167803913.928,
+        "writes": 1,
+        "worst_ms": 1218.7,
+        "worst_ack_ms": 37.2,
+        "cause": "update path"
+      },
+      {
+        "start": 1792167815914.4946,
+        "writes": 1,
+        "worst_ms": 1200.4,
+        "worst_ack_ms": 38.5,
+        "cause": "update path"
+      },
+      {
+        "start": 1792167825914.1558,
+        "writes": 2,
+        "worst_ms": 1147.7,
+        "worst_ack_ms": 41.9,
+        "cause": "update path"
+      },
+      {
+        "start": 1792167834914.4358,
+        "writes": 2,
+        "worst_ms": 568.3,
+        "worst_ack_ms": 40.2,
+        "cause": "update path"
+      },
+      {
+        "start": 1792167885914.0203,
+        "writes": 1,
+        "worst_ms": 662.7,
+        "worst_ack_ms": 39.7,
+        "cause": "update path"
+      },
+      {
+        "start": 1792168119914.0737,
+        "writes": 9,
+        "worst_ms": 6359.6,
+        "worst_ack_ms": 1068.3,
+        "cause": "write path (slow commit ack)"
+      },
+      {
+        "start": 1792168330914.2456,
+        "writes": 1,
+        "worst_ms": 549,
+        "worst_ack_ms": 40.5,
+        "cause": "update path"
+      },
+      {
+        "start": 1792168339914.7112,
+        "writes": 4,
+        "worst_ms": 3681.2,
+        "worst_ack_ms": 3629.5,
+        "cause": "write path (slow commit ack)"
+      },
+      {
+        "start": 1792168355915.6057,
+        "writes": 5,
+        "worst_ms": 1541,
+        "worst_ack_ms": 1373.7,
+        "cause": "write path (slow commit ack)"
+      },
+      {
+        "start": 1792168371914.6716,
+        "writes": 4,
+        "worst_ms": 3117.6,
+        "worst_ack_ms": 45,
+        "cause": "update path"
+      }
+    ]
+  },
+  {
+    "run_id": "plain-100ps-w200-A-2026-10-16T15-50-37",
+    "code_hash": "9bf5cd42f22ec314",
+    "shape": "plain",
+    "rate": 100,
+    "window": 200,
+    "label": "A",
+    "duration_s": 60,
+    "writes": 6000,
+    "errors": 0,
+    "delivered": 6000,
+    "missing": 0,
+    "consistency_mismatches": 0,
+    "mismatch_examples": [],
+    "delivered_via_reset": 0,
+    "updates": {
+      "changes": 6000,
+      "rows": 1
+    },
+    "resets": 0,
+    "latency_ms": {
+      "p50": 39.2,
+      "p90": 42,
+      "p99": 46.3,
+      "max": 304.6
+    },
+    "after_commit_ack_ms": {
+      "p50": 4.4,
+      "p99": 9.4
+    },
+    "write_ms": {
+      "p50": 35.9,
+      "p99": 40.1
+    },
+    "select1_rtt_ms_p50": 39,
+    "ws_rtt_ms_p50": 42.2,
+    "est_server_side_ms_p50": -1.4,
+    "wire_bytes_during_writes": 3056340,
+    "wire_bytes_per_write": 509,
+    "wire_mb_per_s": 0.051,
+    "time_to_first_result_ms": 515.8,
+    "writes_queued_in_pool": 0,
+    "eld_p99_ms": {
+      "subscriber": 11.8,
+      "writer": 11.2
+    },
+    "loadavg_at_start": [
+      0.46,
+      1.41,
+      1.9
+    ],
+    "server_errors": [],
+    "slow_episodes": [
+      {
+        "start": 1792165874030.696,
+        "writes": 1,
+        "worst_ms": 304.6,
+        "worst_ack_ms": 299.4,
+        "cause": "update path"
+      },
+      {
+        "start": 1792165904041.5603,
+        "writes": 1,
+        "worst_ms": 303.9,
+        "worst_ack_ms": 298.6,
+        "cause": "update path"
+      }
+    ]
+  },
+  {
+    "run_id": "plain-100ps-w200-B-2026-10-16T16-52-05",
+    "code_hash": "9bf5cd42f22ec314",
+    "shape": "plain",
+    "rate": 100,
+    "window": 200,
+    "label": "B",
+    "duration_s": 60,
+    "writes": 6000,
+    "errors": 0,
+    "delivered": 6000,
+    "missing": 0,
+    "consistency_mismatches": 0,
+    "mismatch_examples": [],
+    "delivered_via_reset": 0,
+    "updates": {
+      "changes": 6000,
+      "rows": 1
+    },
+    "resets": 0,
+    "latency_ms": {
+      "p50": 40.3,
+      "p90": 44.2,
+      "p99": 53.9,
+      "max": 293.2
+    },
+    "after_commit_ack_ms": {
+      "p50": 3.8,
+      "p99": 14.1
+    },
+    "write_ms": {
+      "p50": 37.5,
+      "p99": 45.5
+    },
+    "select1_rtt_ms_p50": 32.2,
+    "ws_rtt_ms_p50": 41.3,
+    "est_server_side_ms_p50": 3.6,
+    "wire_bytes_during_writes": 3056340,
+    "wire_bytes_per_write": 509,
+    "wire_mb_per_s": 0.051,
+    "time_to_first_result_ms": 523,
+    "writes_queued_in_pool": 10,
+    "eld_p99_ms": {
+      "subscriber": 17.2,
+      "writer": 16.3
+    },
+    "loadavg_at_start": [
+      1.71,
+      1.86,
+      3.24
+    ],
+    "server_errors": [],
+    "slow_episodes": []
+  },
+  {
+    "run_id": "plain-10ps-w200-A-2026-10-16T15-33-00",
+    "code_hash": "9bf5cd42f22ec314",
+    "shape": "plain",
+    "rate": 10,
+    "window": 200,
+    "label": "A",
+    "duration_s": 180,
+    "writes": 1800,
+    "errors": 0,
+    "delivered": 1800,
+    "missing": 0,
+    "consistency_mismatches": 0,
+    "mismatch_examples": [],
+    "delivered_via_reset": 13,
+    "updates": {
+      "changes": 1787,
+      "rows": 2
+    },
+    "resets": 0,
+    "latency_ms": {
+      "p50": 44.9,
+      "p90": 47.7,
+      "p99": 456.3,
+      "max": 1599.2
+    },
+    "after_commit_ack_ms": {
+      "p50": 2.6,
+      "p99": 416
+    },
+    "write_ms": {
+      "p50": 42.6,
+      "p99": 47.6
+    },
+    "select1_rtt_ms_p50": 38.5,
+    "ws_rtt_ms_p50": 42.2,
+    "est_server_side_ms_p50": 4.6,
+    "wire_bytes_during_writes": 938856,
+    "wire_bytes_per_write": 522,
+    "wire_mb_per_s": 0.005,
+    "time_to_first_result_ms": 625.9,
+    "writes_queued_in_pool": 1,
+    "eld_p99_ms": {
+      "subscriber": 12.2,
+      "writer": 11.6
+    },
+    "loadavg_at_start": [
+      0.17,
+      0.4,
+      1.15
+    ],
+    "server_errors": [
+      {
+        "t": 1792164935811.145,
+        "type": "connection_error",
+        "code": "backend_session_lost",
+        "message": "live query session ended; reconnect required"
+      }
+    ],
+    "slow_episodes": [
+      {
+        "start": 1792164935772.4106,
+        "writes": 11,
+        "worst_ms": 1357,
+        "worst_ack_ms": 44.2,
+        "cause": "server ended the live query session"
+      },
+      {
+        "start": 1792164970073.5247,
+        "writes": 9,
+        "worst_ms": 1599.2,
+        "worst_ack_ms": 43.3,
+        "cause": "update path"
+      }
+    ]
+  },
+  {
+    "run_id": "plain-10ps-w200-B-2026-10-16T16-43-48",
+    "code_hash": "9bf5cd42f22ec314",
+    "shape": "plain",
+    "rate": 10,
+    "window": 200,
+    "label": "B",
+    "duration_s": 180,
+    "writes": 1800,
+    "errors": 0,
+    "delivered": 1800,
+    "missing": 0,
+    "consistency_mismatches": 0,
+    "mismatch_examples": [],
+    "delivered_via_reset": 0,
+    "updates": {
+      "changes": 1800,
+      "rows": 1
+    },
+    "resets": 0,
+    "latency_ms": {
+      "p50": 40.6,
+      "p90": 42.4,
+      "p99": 48.1,
+      "max": 82.4
+    },
+    "after_commit_ack_ms": {
+      "p50": -1.7,
+      "p99": 3.4
+    },
+    "write_ms": {
+      "p50": 42.1,
+      "p99": 46.7
+    },
+    "select1_rtt_ms_p50": 38.5,
+    "ws_rtt_ms_p50": 34.6,
+    "est_server_side_ms_p50": 4.1,
+    "wire_bytes_during_writes": 924187,
+    "wire_bytes_per_write": 513,
+    "wire_mb_per_s": 0.005,
+    "time_to_first_result_ms": 588.7,
+    "writes_queued_in_pool": 0,
+    "eld_p99_ms": {
+      "subscriber": 11.3,
+      "writer": 11
+    },
+    "loadavg_at_start": [
+      0.66,
+      3.14,
+      4.59
+    ],
+    "server_errors": [],
+    "slow_episodes": []
+  },
+  {
+    "run_id": "plain-1ps-w200-B-2026-10-16T16-05-15",
+    "code_hash": "9bf5cd42f22ec314",
+    "shape": "plain",
+    "rate": 1,
+    "window": 200,
+    "label": "B",
+    "duration_s": 600,
+    "writes": 600,
+    "errors": 0,
+    "delivered": 600,
+    "missing": 0,
+    "consistency_mismatches": 0,
+    "mismatch_examples": [],
+    "delivered_via_reset": 1,
+    "updates": {
+      "changes": 599,
+      "rows": 2
+    },
+    "resets": 0,
+    "latency_ms": {
+      "p50": 43,
+      "p90": 54,
+      "p99": 5433.8,
+      "max": 13451.8
+    },
+    "after_commit_ack_ms": {
+      "p50": 6.3,
+      "p99": 2480.3
+    },
+    "write_ms": {
+      "p50": 37.3,
+      "p99": 3789.8
+    },
+    "select1_rtt_ms_p50": 35.8,
+    "ws_rtt_ms_p50": 39.3,
+    "est_server_side_ms_p50": 5.4,
+    "wire_bytes_during_writes": 368102,
+    "wire_bytes_per_write": 614,
+    "wire_mb_per_s": 0.001,
+    "time_to_first_result_ms": 559.6,
+    "writes_queued_in_pool": 6,
+    "eld_p99_ms": {
+      "subscriber": 14.7,
+      "writer": 14.4
+    },
+    "loadavg_at_start": [
+      0.9,
+      1.03,
+      1.41
+    ],
+    "server_errors": [
+      {
+        "t": 1792167126046.3767,
+        "type": "connection_error",
+        "code": "backend_session_lost",
+        "message": "live query session ended; reconnect required"
+      }
+    ],
+    "slow_episodes": [
+      {
+        "start": 1792166844107,
+        "writes": 18,
+        "worst_ms": 13451.8,
+        "worst_ack_ms": 11008.4,
+        "cause": "write path (slow commit ack)"
+      },
+      {
+        "start": 1792166871868.125,
+        "writes": 2,
+        "worst_ms": 1040.3,
+        "worst_ack_ms": 1036.2,
+        "cause": "write path (slow commit ack)"
+      },
+      {
+        "start": 1792166880869.102,
+        "writes": 13,
+        "worst_ms": 2237.5,
+        "worst_ack_ms": 2231,
+        "cause": "write path (slow commit ack)"
+      },
+      {
+        "start": 1792167126869.3208,
+        "writes": 1,
+        "worst_ms": 321.3,
+        "worst_ack_ms": 33.6,
+        "cause": "server ended the live query session"
+      },
+      {
+        "start": 1792167217868.1545,
+        "writes": 1,
+        "worst_ms": 1008.8,
+        "worst_ack_ms": 36.2,
+        "cause": "update path"
+      }
+    ]
+  }
+]

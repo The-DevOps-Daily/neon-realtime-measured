@@ -1,0 +1,14 @@
+{
+  "finished_at": "2026-10-16T17:31:43.945Z",
+  "writer_exit": 0,
+  "loadavg_at_end": [
+    0.47,
+    0.45,
+    1.7
+  ],
+  "memory_mb_at_end": {
+    "MemAvailable": 2785,
+    "SwapTotal": 2048,
+    "SwapFree": 850
+  }
+}

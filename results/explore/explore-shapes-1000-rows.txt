@@ -1,0 +1,39 @@
+store 901: 1000 prefilled orders; all three subscriptions live
+
+plain: 22 frames, 2435 payload bytes for 5 writes (487 per write)
+┌─────────────────────┬───┬───────┐
+│ (index)             │ n │ bytes │
+├─────────────────────┼───┼───────┤
+│ after:progress      │ 7 │ 455   │
+│ after:open          │ 5 │ 180   │
+│ after:keyed_results │ 5 │ 1380  │
+│ after:commit        │ 5 │ 420   │
+└─────────────────────┴───┴───────┘
+
+join: 52 frames, 656815 payload bytes for 5 writes (131363 per write)
+┌───────────────────────────┬────┬────────┐
+│ (index)                   │ n  │ bytes  │
+├───────────────────────────┼────┼────────┤
+│ after:progress            │ 7  │ 455    │
+│ after:open                │ 5  │ 180    │
+│ after:reset_required      │ 5  │ 585    │
+│ after:commit              │ 5  │ 420    │
+│ after:baseline_sync_start │ 5  │ 650    │
+│ after:baseline_sync_batch │ 20 │ 654035 │
+│ after:baseline_sync_end   │ 5  │ 490    │
+└───────────────────────────┴────┴────────┘
+
+aggregate: 37 frames, 5015 payload bytes for 5 writes (1003 per write)
+┌───────────────────────────┬───┬───────┐
+│ (index)                   │ n │ bytes │
+├───────────────────────────┼───┼───────┤
+│ after:progress            │ 7 │ 455   │
+│ after:open                │ 5 │ 180   │
+│ after:reset_required      │ 5 │ 585   │
+│ after:commit              │ 5 │ 420   │
+│ after:baseline_sync_start │ 5 │ 650   │
+│ after:baseline_sync_batch │ 5 │ 2235  │
+│ after:baseline_sync_end   │ 5 │ 490   │
+└───────────────────────────┴───┴───────┘
+
+writes: seq 1 txid 1087 ack 40.9 ms; seq 2 txid 1089 ack 38.6 ms; seq 3 txid 1090 ack 42.9 ms; seq 4 txid 1091 ack 38.7 ms; seq 5 txid 1092 ack 36.2 ms

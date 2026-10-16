@@ -1,0 +1,18 @@
+Created neon.ts: added preview.realtime: true.
+Installing @neon/config, @neon/env with npm…
+
+added 13 packages, and audited 179 packages in 21s
+
+53 packages are looking for funding
+  run `npm fund` for details
+
+3 vulnerabilities (1 low, 2 moderate)
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+Next: `neon config plan` to preview, `neon config apply` to provision.

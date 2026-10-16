@@ -1,0 +1,97 @@
+{
+  "run_id": "plain-1ps-w200-B-2026-10-16T16-05-15",
+  "code_hash": "9bf5cd42f22ec314",
+  "shape": "plain",
+  "rate": 1,
+  "window": 200,
+  "label": "B",
+  "duration_s": 600,
+  "writes": 600,
+  "errors": 0,
+  "delivered": 600,
+  "missing": 0,
+  "consistency_mismatches": 0,
+  "mismatch_examples": [],
+  "delivered_via_reset": 1,
+  "updates": {
+    "changes": 599,
+    "rows": 2
+  },
+  "resets": 0,
+  "latency_ms": {
+    "p50": 43,
+    "p90": 54,
+    "p99": 5433.8,
+    "max": 13451.8
+  },
+  "after_commit_ack_ms": {
+    "p50": 6.3,
+    "p99": 2480.3
+  },
+  "write_ms": {
+    "p50": 37.3,
+    "p99": 3789.8
+  },
+  "select1_rtt_ms_p50": 35.8,
+  "ws_rtt_ms_p50": 39.3,
+  "est_server_side_ms_p50": 5.4,
+  "wire_bytes_during_writes": 368102,
+  "wire_bytes_per_write": 614,
+  "wire_mb_per_s": 0.001,
+  "time_to_first_result_ms": 559.6,
+  "writes_queued_in_pool": 6,
+  "eld_p99_ms": {
+    "subscriber": 14.7,
+    "writer": 14.4
+  },
+  "loadavg_at_start": [
+    0.9,
+    1.03,
+    1.41
+  ],
+  "server_errors": [
+    {
+      "t": 1792167126046.3767,
+      "type": "connection_error",
+      "code": "backend_session_lost",
+      "message": "live query session ended; reconnect required"
+    }
+  ],
+  "slow_episodes": [
+    {
+      "start": 1792166844107,
+      "writes": 18,
+      "worst_ms": 13451.8,
+      "worst_ack_ms": 11008.4,
+      "cause": "write path (slow commit ack)"
+    },
+    {
+      "start": 1792166871868.125,
+      "writes": 2,
+      "worst_ms": 1040.3,
+      "worst_ack_ms": 1036.2,
+      "cause": "write path (slow commit ack)"
+    },
+    {
+      "start": 1792166880869.102,
+      "writes": 13,
+      "worst_ms": 2237.5,
+      "worst_ack_ms": 2231,
+      "cause": "write path (slow commit ack)"
+    },
+    {
+      "start": 1792167126869.3208,
+      "writes": 1,
+      "worst_ms": 321.3,
+      "worst_ack_ms": 33.6,
+      "cause": "server ended the live query session"
+    },
+    {
+      "start": 1792167217868.1545,
+      "writes": 1,
+      "worst_ms": 1008.8,
+      "worst_ack_ms": 36.2,
+      "cause": "update path"
+    }
+  ]
+}

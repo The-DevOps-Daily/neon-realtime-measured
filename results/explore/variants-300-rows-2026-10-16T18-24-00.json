@@ -1,0 +1,89 @@
+{
+  "code_hash": "89517e0eb862ccc8",
+  "rows": 300,
+  "store": 905,
+  "variants": [
+    {
+      "name": "board: open orders (members join + status filter)",
+      "sql": "SELECT o.id, o.customer_id, o.status, o.total_cents FROM orders o JOIN store_members m ON m.store_id = o.store_id WHERE m.user_id = $1 AND o.store_id = $2 AND o.status <> 'done'"
+    },
+    {
+      "name": "board: customers (members join)",
+      "sql": "SELECT c.id, c.name FROM customers c JOIN store_members m ON m.store_id = c.store_id WHERE m.user_id = $1 AND c.store_id = $2"
+    },
+    {
+      "name": "board: counts per status (members join + GROUP BY)",
+      "sql": "SELECT o.status, count(*)::int AS orders FROM orders o JOIN store_members m ON m.store_id = o.store_id WHERE m.user_id = $1 AND o.store_id = $2 GROUP BY o.status"
+    },
+    {
+      "name": "join orders-customers, both pinned to the store",
+      "sql": "SELECT o.id, o.status, c.name AS customer FROM orders o JOIN customers c ON c.id = o.customer_id WHERE o.store_id = $1 AND c.store_id = $1"
+    },
+    {
+      "name": "plain + ORDER BY id, no LIMIT",
+      "sql": "SELECT id, status FROM orders WHERE store_id = $1 ORDER BY id"
+    },
+    {
+      "name": "plain + LIMIT 50, no ORDER BY",
+      "sql": "SELECT id, status FROM orders WHERE store_id = $1 LIMIT 50"
+    },
+    {
+      "name": "SELECT DISTINCT status",
+      "sql": "SELECT DISTINCT status FROM orders WHERE store_id = $1"
+    },
+    {
+      "name": "plain filter (control)",
+      "sql": "SELECT id, status, total_cents FROM orders WHERE store_id = $1"
+    }
+  ],
+  "table": [
+    {
+      "variant": "board: open orders (members join + status filter)",
+      "order insert": "incremental, 396 B",
+      "order status -> done": "incremental, 354 B",
+      "customer insert": "nothing"
+    },
+    {
+      "variant": "board: customers (members join)",
+      "order insert": "nothing",
+      "order status -> done": "nothing",
+      "customer insert": "incremental, 389 B"
+    },
+    {
+      "variant": "board: counts per status (members join + GROUP BY)",
+      "order insert": "reset, 885 B",
+      "order status -> done": "reset, 986 B",
+      "customer insert": "nothing"
+    },
+    {
+      "variant": "join orders-customers, both pinned to the store",
+      "order insert": "reset, 37180 B",
+      "order status -> done": "reset, 37175 B",
+      "customer insert": "reset, 37175 B"
+    },
+    {
+      "variant": "plain + ORDER BY id, no LIMIT",
+      "order insert": "reset, 33104 B",
+      "order status -> done": "reset, 33099 B",
+      "customer insert": "nothing"
+    },
+    {
+      "variant": "plain + LIMIT 50, no ORDER BY",
+      "order insert": "reset, 5978 B",
+      "order status -> done": "reset, 5972 B",
+      "customer insert": "nothing"
+    },
+    {
+      "variant": "SELECT DISTINCT status",
+      "order insert": "reset, 868 B",
+      "order status -> done": "reset, 965 B",
+      "customer insert": "nothing"
+    },
+    {
+      "variant": "plain filter (control)",
+      "order insert": "incremental, 387 B",
+      "order status -> done": "incremental, 388 B",
+      "customer insert": "nothing"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+   4.4s  alice  state live 
+   4.4s  alice  live with 1 open orders 
+   4.4s  admin  removed alice from Harbour {"commit_ms":36}
+   4.4s  alice  result empty 8 ms after the removal committed 
+  53.2s  alice  renew refused: HTTP 403 {"error":"not a member of this store"} (retried every second from here) 
+    63s  alice  state stale 
+  64.7s  alice  0 of 6 orders added after removal reached her 
+  64.7s  alice  state closed 
+  65.5s  bob    state live 
+  65.5s  bob    live with 7 open orders (seal-time check only) 
+  65.5s  admin  removed bob from Harbour 
+ 115.2s  bob    renew refused: HTTP 403 not a member (retried every second from here) 
+   125s  bob    state stale 
+ 159.2s  bob    12 of 18 orders added after removal reached him; the last was added 56 s after removal 
+ 159.2s  bob    state closed 
+ 159.8s  eve    state live 
+ 159.8s  eve    live on bob's sealed query with 25 of Harbour's open orders 
+ 209.2s  eve    renew refused: HTTP 403 {"error":"not a member of this store"} (retried every second from here) 
+   219s  eve    state stale 
+ 253.6s  eve    12 of 18 new orders reached her; the last was added 56 s after bob's query was sealed 
+ 253.6s  eve    state closed 
+{
+  "case1": {
+    "emptied_ms_after_commit": 8,
+    "orders_after_removal": 6,
+    "leaked": 0
+  },
+  "case2": {
+    "orders_after_removal": 18,
+    "leaked": 12,
+    "last_leak_s_after_removal": 55.5,
+    "sealed_expires_s_after_removal": 59.5
+  },
+  "case3": {
+    "initial_rows": 37,
+    "orders_added": 18,
+    "received": 12,
+    "last_received_s_after_seal": 56,
+    "sealed_lifetime_s": 59.6
+  }
+}

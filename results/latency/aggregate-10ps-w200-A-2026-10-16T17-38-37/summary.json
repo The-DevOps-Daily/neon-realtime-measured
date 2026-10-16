@@ -1,0 +1,108 @@
+{
+  "run_id": "aggregate-10ps-w200-A-2026-10-16T17-38-37",
+  "code_hash": "24b7c8ee202e1939",
+  "shape": "aggregate",
+  "rate": 10,
+  "window": 200,
+  "label": "A",
+  "duration_s": 180,
+  "writes": 1800,
+  "errors": 0,
+  "delivered": 1800,
+  "missing": 0,
+  "consistency_mismatches": 0,
+  "mismatch_examples": [],
+  "delivered_via_reset": 1800,
+  "updates": {
+    "changes": 0,
+    "rows": 1780
+  },
+  "resets": 1777,
+  "latency_ms": {
+    "p50": 42.5,
+    "p90": 45,
+    "p99": 289.9,
+    "max": 1219.2
+  },
+  "after_commit_ack_ms": {
+    "p50": 4,
+    "p99": 254.3
+  },
+  "write_ms": {
+    "p50": 38.6,
+    "p99": 41.6
+  },
+  "select1_rtt_ms_p50": 32.1,
+  "ws_rtt_ms_p50": 41.4,
+  "est_server_side_ms_p50": 5.7,
+  "stall_data": true,
+  "client_stalls": {
+    "writer": {
+      "count": 0,
+      "total_ms": 0,
+      "max_ms": 0
+    },
+    "subscriber": {
+      "count": 2,
+      "total_ms": 156,
+      "max_ms": 96
+    }
+  },
+  "writes_overlapping_client_stall": 1,
+  "latency_clean_ms": {
+    "p50": 42.5,
+    "p90": 45,
+    "p99": 318.9,
+    "max": 1219.2
+  },
+  "after_commit_ack_clean_ms": {
+    "p50": 4,
+    "p99": 287
+  },
+  "wire_bytes_during_writes": 1662598,
+  "wire_bytes_per_write": 924,
+  "wire_mb_per_s": 0.009,
+  "time_to_first_result_ms": 568.1,
+  "writes_queued_in_pool": 0,
+  "eld_p99_ms": {
+    "subscriber": 11.5,
+    "writer": 10.9
+  },
+  "loadavg_at_start": [
+    0.5,
+    0.53,
+    1.27
+  ],
+  "server_errors": [
+    {
+      "t": 1792172382644.4585,
+      "type": "connection_error",
+      "code": "backend_session_lost",
+      "message": "live query session ended; reconnect required"
+    },
+    {
+      "t": 1792172502668.3555,
+      "type": "connection_error",
+      "code": "backend_session_lost",
+      "message": "live query session ended; reconnect required"
+    }
+  ],
+  "slow_episodes": [
+    {
+      "start": 1792172382647.3396,
+      "writes": 8,
+      "worst_ms": 1088.6,
+      "worst_ack_ms": 39.5,
+      "client_stall_ms": 0,
+      "cause": "server ended the live query session"
+    },
+    {
+      "start": 1792172502646.0662,
+      "writes": 10,
+      "worst_ms": 1219.2,
+      "worst_ack_ms": 37.9,
+      "client_stall_ms": 0,
+      "cause": "server ended the live query session"
+    }
+  ]
+}

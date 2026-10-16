@@ -1,0 +1,33 @@
+{
+  "run_id": "plain-100ps-w200-A-2026-10-16T17-42-02",
+  "code_hash": "24b7c8ee202e1939",
+  "shape": "plain",
+  "rate": 100,
+  "duration": 60,
+  "window": 200,
+  "label": "A",
+  "subscriber": "@neon/realtime client SDK",
+  "store_id": 1000,
+  "user": "bench-user-1000",
+  "seed": 1000,
+  "started_at": "2026-10-16T17:42:03.049Z",
+  "node": "v24.14.0",
+  "sdk": "@neon/realtime@0.1.0",
+  "region": "aws-eu-central-1",
+  "compute": {
+    "id": "ep-morning-hall-ba4xiwgd",
+    "min_cu": 0.25,
+    "max_cu": 1
+  },
+  "loadavg_at_start": [
+    0.33,
+    0.38,
+    1.06
+  ],
+  "memory_mb_at_start": {
+    "MemAvailable": 2627,
+    "SwapTotal": 2048,
+    "SwapFree": 857
+  },
+  "waited_for_load_s": 2
+}

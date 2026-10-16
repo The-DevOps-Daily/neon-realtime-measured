@@ -1,0 +1,54 @@
+{
+  "run_id": "aggregate-1ps-w200-A-2026-10-16T15-22-36",
+  "code_hash": "9bf5cd42f22ec314",
+  "shape": "aggregate",
+  "rate": 1,
+  "window": 200,
+  "label": "A",
+  "duration_s": 600,
+  "writes": 600,
+  "errors": 0,
+  "delivered": 600,
+  "missing": 0,
+  "consistency_mismatches": 0,
+  "mismatch_examples": [],
+  "delivered_via_reset": 600,
+  "updates": {
+    "changes": 0,
+    "rows": 601
+  },
+  "resets": 600,
+  "latency_ms": {
+    "p50": 43.9,
+    "p90": 47.8,
+    "p99": 86.1,
+    "max": 87.6
+  },
+  "after_commit_ack_ms": {
+    "p50": 3.8,
+    "p99": 46.9
+  },
+  "write_ms": {
+    "p50": 40.2,
+    "p99": 45.6
+  },
+  "select1_rtt_ms_p50": 35.2,
+  "ws_rtt_ms_p50": 35.2,
+  "est_server_side_ms_p50": 8.7,
+  "wire_bytes_during_writes": 594608,
+  "wire_bytes_per_write": 991,
+  "wire_mb_per_s": 0.001,
+  "time_to_first_result_ms": 648.7,
+  "writes_queued_in_pool": 0,
+  "eld_p99_ms": {
+    "subscriber": 10.9,
+    "writer": 10.9
+  },
+  "loadavg_at_start": [
+    0.36,
+    0.51,
+    1.81
+  ],
+  "server_errors": [],
+  "slow_episodes": []
+}

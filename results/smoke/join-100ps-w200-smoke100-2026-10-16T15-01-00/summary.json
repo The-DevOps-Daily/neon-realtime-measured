@@ -1,0 +1,52 @@
+{
+  "run_id": "join-100ps-w200-smoke100-2026-10-16T15-01-00",
+  "code_hash": "a47a9076e14a57a6",
+  "shape": "join",
+  "rate": 100,
+  "window": 200,
+  "label": "smoke100",
+  "duration_s": 10,
+  "writes": 1000,
+  "errors": 0,
+  "delivered": 1000,
+  "missing": 0,
+  "consistency_mismatches": 0,
+  "mismatch_examples": [],
+  "delivered_via_reset": 1000,
+  "updates": {
+    "changes": 0,
+    "rows": 997
+  },
+  "resets": 1000,
+  "latency_ms": {
+    "p50": 48.3,
+    "p90": 64.4,
+    "p99": 109.7,
+    "max": 111.5
+  },
+  "after_commit_ack_ms": {
+    "p50": 12.9,
+    "p99": 71.9
+  },
+  "write_ms": {
+    "p50": 38.3,
+    "p99": 45.9
+  },
+  "select1_rtt_ms_p50": 32.2,
+  "ws_rtt_ms_p50": 36.1,
+  "est_server_side_ms_p50": 14.1,
+  "wire_bytes_during_writes": 26896319,
+  "wire_bytes_per_write": 26896,
+  "wire_mb_per_s": 2.677,
+  "time_to_first_result_ms": 690.4,
+  "writes_queued_in_pool": 0,
+  "eld_p99_ms": {
+    "subscriber": 19,
+    "writer": 14.2
+  },
+  "loadavg_at_start": [
+    3.43,
+    4.9,
+    5.56
+  ]
+}

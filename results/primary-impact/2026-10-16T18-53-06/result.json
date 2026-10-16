@@ -1,0 +1,105 @@
+{
+  "rate": 20,
+  "users": 100,
+  "block_s": 60,
+  "settle_s": 20,
+  "code_hash": "0cadd0b697af8945",
+  "median_on_ms": 35.9,
+  "median_off_ms": 40,
+  "p99_on_ms": 96.9,
+  "p99_off_ms": 74.7,
+  "median_diff_ms": -4.12,
+  "median_diff_95ci_ms": [
+    -4.22,
+    -4.02
+  ],
+  "blocks": [
+    {
+      "block": 0,
+      "cond": "off",
+      "pgss_calls": "1200",
+      "pgss_mean_exec_ms": 0.319,
+      "writer_eld_p99_ms": 13.7,
+      "writes": 1286,
+      "errors": 0,
+      "p50": 39.7,
+      "p90": 42.4,
+      "p99": 90.4
+    },
+    {
+      "block": 1,
+      "cond": "on",
+      "pgss_calls": "1201",
+      "pgss_mean_exec_ms": 3.153,
+      "writer_eld_p99_ms": 11.8,
+      "writes": 1202,
+      "errors": 0,
+      "p50": 36.4,
+      "p90": 40.3,
+      "p99": 131.4,
+      "subscriptions": {
+        "subscriptions": 100,
+        "updates": 162359,
+        "errors": 0
+      }
+    },
+    {
+      "block": 2,
+      "cond": "off",
+      "pgss_calls": "1201",
+      "pgss_mean_exec_ms": 3.169,
+      "writer_eld_p99_ms": 15.2,
+      "writes": 1466,
+      "errors": 0,
+      "p50": 40.1,
+      "p90": 45.2,
+      "p99": 65.8
+    },
+    {
+      "block": 3,
+      "cond": "on",
+      "pgss_calls": "1200",
+      "pgss_mean_exec_ms": 3.135,
+      "writer_eld_p99_ms": 13.2,
+      "writes": 1202,
+      "errors": 0,
+      "p50": 35.5,
+      "p90": 37.8,
+      "p99": 47.2,
+      "subscriptions": {
+        "subscriptions": 100,
+        "updates": 163731,
+        "errors": 0
+      }
+    },
+    {
+      "block": 4,
+      "cond": "off",
+      "pgss_calls": "1201",
+      "pgss_mean_exec_ms": 3.136,
+      "writer_eld_p99_ms": 13,
+      "writes": 1285,
+      "errors": 0,
+      "p50": 41,
+      "p90": 44.5,
+      "p99": 50.4
+    },
+    {
+      "block": 5,
+      "cond": "on",
+      "pgss_calls": "1200",
+      "pgss_mean_exec_ms": 3.182,
+      "writer_eld_p99_ms": 11.3,
+      "writes": 1204,
+      "errors": 0,
+      "p50": 36.1,
+      "p90": 42.2,
+      "p99": 52.3,
+      "subscriptions": {
+        "subscriptions": 100,
+        "updates": 159944,
+        "errors": 0
+      }
+    }
+  ]
+}

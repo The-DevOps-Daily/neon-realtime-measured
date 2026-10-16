@@ -1,0 +1,26 @@
+{
+  "code_hash": "37ea2d527e1b070c",
+  "results": [
+    {
+      "shape": "plain",
+      "updates": 300,
+      "cpu_ms_total": 643.3,
+      "cpu_ms_per_update": 2.14,
+      "max_updates_per_s_one_core": 466
+    },
+    {
+      "shape": "join",
+      "updates": 300,
+      "cpu_ms_total": 2831,
+      "cpu_ms_per_update": 9.44,
+      "max_updates_per_s_one_core": 106
+    },
+    {
+      "shape": "aggregate",
+      "updates": 300,
+      "cpu_ms_total": 611.5,
+      "cpu_ms_per_update": 2.04,
+      "max_updates_per_s_one_core": 491
+    }
+  ]
+}

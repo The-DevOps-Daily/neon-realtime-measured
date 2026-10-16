@@ -1,0 +1,48 @@
+{
+  "code_hash": "a25f3fda378bc2e4",
+  "rows": 20000,
+  "results": [
+    {
+      "path": "Live SQL API initial result",
+      "bytes": 2671859,
+      "ms": 983.6,
+      "mb_per_s": 2.72,
+      "subscribe_to_live_ms": 1538.6
+    },
+    {
+      "path": "direct Postgres connection, same rows",
+      "rows": 20000,
+      "json_bytes": 1723654,
+      "ms": 305.4,
+      "mb_per_s_json_equiv": 5.64
+    },
+    {
+      "path": "Live SQL API initial result",
+      "bytes": 2671859,
+      "ms": 1400.7,
+      "mb_per_s": 1.91,
+      "subscribe_to_live_ms": 2030.3
+    },
+    {
+      "path": "direct Postgres connection, same rows",
+      "rows": 20000,
+      "json_bytes": 1723654,
+      "ms": 277.2,
+      "mb_per_s_json_equiv": 6.22
+    },
+    {
+      "path": "Live SQL API initial result",
+      "bytes": 2671859,
+      "ms": 961.7,
+      "mb_per_s": 2.78,
+      "subscribe_to_live_ms": 1467.8
+    },
+    {
+      "path": "direct Postgres connection, same rows",
+      "rows": 20000,
+      "json_bytes": 1723654,
+      "ms": 277.6,
+      "mb_per_s_json_equiv": 6.21
+    }
+  ]
+}

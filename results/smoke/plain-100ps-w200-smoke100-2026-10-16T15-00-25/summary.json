@@ -1,0 +1,52 @@
+{
+  "run_id": "plain-100ps-w200-smoke100-2026-10-16T15-00-25",
+  "code_hash": "a47a9076e14a57a6",
+  "shape": "plain",
+  "rate": 100,
+  "window": 200,
+  "label": "smoke100",
+  "duration_s": 10,
+  "writes": 1000,
+  "errors": 0,
+  "delivered": 1000,
+  "missing": 0,
+  "consistency_mismatches": 0,
+  "mismatch_examples": [],
+  "delivered_via_reset": 0,
+  "updates": {
+    "changes": 1000,
+    "rows": 1
+  },
+  "resets": 0,
+  "latency_ms": {
+    "p50": 39.8,
+    "p90": 42.4,
+    "p99": 52.8,
+    "max": 63.9
+  },
+  "after_commit_ack_ms": {
+    "p50": 6.3,
+    "p99": 14.3
+  },
+  "write_ms": {
+    "p50": 33.5,
+    "p99": 40.3
+  },
+  "select1_rtt_ms_p50": 33.1,
+  "ws_rtt_ms_p50": 42.4,
+  "est_server_side_ms_p50": 2,
+  "wire_bytes_during_writes": 502991,
+  "wire_bytes_per_write": 503,
+  "wire_mb_per_s": 0.05,
+  "time_to_first_result_ms": 642.6,
+  "writes_queued_in_pool": 0,
+  "eld_p99_ms": {
+    "subscriber": 12.4,
+    "writer": 16.6
+  },
+  "loadavg_at_start": [
+    2.17,
+    4.88,
+    5.58
+  ]
+}

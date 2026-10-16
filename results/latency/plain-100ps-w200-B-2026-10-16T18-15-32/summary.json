@@ -1,0 +1,87 @@
+{
+  "run_id": "plain-100ps-w200-B-2026-10-16T18-15-32",
+  "code_hash": "24b7c8ee202e1939",
+  "shape": "plain",
+  "rate": 100,
+  "window": 200,
+  "label": "B",
+  "duration_s": 60,
+  "writes": 6000,
+  "errors": 0,
+  "delivered": 6000,
+  "missing": 0,
+  "consistency_mismatches": 0,
+  "mismatch_examples": [],
+  "delivered_via_reset": 0,
+  "updates": {
+    "changes": 6000,
+    "rows": 1
+  },
+  "resets": 0,
+  "latency_ms": {
+    "p50": 34.7,
+    "p90": 37.1,
+    "p99": 43.4,
+    "max": 326.8
+  },
+  "after_commit_ack_ms": {
+    "p50": 1.9,
+    "p99": 6.6
+  },
+  "write_ms": {
+    "p50": 33.1,
+    "p99": 40.1
+  },
+  "select1_rtt_ms_p50": 38.5,
+  "ws_rtt_ms_p50": 35.7,
+  "est_server_side_ms_p50": -2.5,
+  "stall_data": true,
+  "client_stalls": {
+    "writer": {
+      "count": 0,
+      "total_ms": 0,
+      "max_ms": 0
+    },
+    "subscriber": {
+      "count": 1,
+      "total_ms": 99,
+      "max_ms": 99
+    }
+  },
+  "writes_overlapping_client_stall": 0,
+  "latency_clean_ms": {
+    "p50": 34.7,
+    "p90": 37.1,
+    "p99": 43.4,
+    "max": 326.8
+  },
+  "after_commit_ack_clean_ms": {
+    "p50": 1.9,
+    "p99": 6.6
+  },
+  "wire_bytes_during_writes": 3068474,
+  "wire_bytes_per_write": 511,
+  "wire_mb_per_s": 0.051,
+  "time_to_first_result_ms": 535.1,
+  "writes_queued_in_pool": 0,
+  "eld_p99_ms": {
+    "subscriber": 11.8,
+    "writer": 11.2
+  },
+  "loadavg_at_start": [
+    0.44,
+    0.49,
+    0.52
+  ],
+  "server_errors": [],
+  "slow_episodes": [
+    {
+      "start": 1792174574118.4075,
+      "writes": 3,
+      "worst_ms": 326.8,
+      "worst_ack_ms": 330.5,
+      "client_stall_ms": 0,
+      "cause": "write path (slow commit ack)"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "run_id": "join-10ps-w200-A-2026-10-16T15-43-46",
+  "code_hash": "9bf5cd42f22ec314",
+  "shape": "join",
+  "rate": 10,
+  "duration": 180,
+  "window": 200,
+  "label": "A",
+  "store_id": 1000,
+  "user": "bench-user-1000",
+  "seed": 1000,
+  "started_at": "2026-10-16T15:43:47.644Z",
+  "node": "v24.14.0",
+  "sdk": "@neon/realtime@0.1.0",
+  "region": "aws-eu-central-1",
+  "compute": {
+    "id": "ep-morning-hall-ba4xiwgd",
+    "min_cu": 0.25,
+    "max_cu": 1
+  },
+  "loadavg_at_start": [
+    2.48,
+    3.53,
+    2.51
+  ],
+  "waited_for_load_s": 438
+}

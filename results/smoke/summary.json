@@ -1,0 +1,262 @@
+[
+  {
+    "run_id": "aggregate-10ps-w200-smoke-2026-10-16T14-59-32",
+    "code_hash": "a47a9076e14a57a6",
+    "shape": "aggregate",
+    "rate": 10,
+    "window": 200,
+    "label": "smoke",
+    "duration_s": 15,
+    "writes": 150,
+    "errors": 0,
+    "delivered": 150,
+    "missing": 0,
+    "consistency_mismatches": 0,
+    "mismatch_examples": [],
+    "delivered_via_reset": 150,
+    "updates": {
+      "changes": 0,
+      "rows": 151
+    },
+    "resets": 150,
+    "latency_ms": {
+      "p50": 47.1,
+      "p90": 50.1,
+      "p99": 62.1,
+      "max": 62.3
+    },
+    "after_commit_ack_ms": {
+      "p50": 2.9,
+      "p99": 9.4
+    },
+    "write_ms": {
+      "p50": 44.3,
+      "p99": 60.2
+    },
+    "select1_rtt_ms_p50": 39.8,
+    "ws_rtt_ms_p50": 42.1,
+    "est_server_side_ms_p50": 6.1,
+    "wire_bytes_during_writes": 138967,
+    "wire_bytes_per_write": 926,
+    "wire_mb_per_s": 0.009,
+    "time_to_first_result_ms": 436.1,
+    "writes_queued_in_pool": 0,
+    "eld_p99_ms": {
+      "subscriber": 12.4,
+      "writer": 12.2
+    },
+    "loadavg_at_start": [
+      3.45,
+      5.61,
+      5.85
+    ]
+  },
+  {
+    "run_id": "join-100ps-w200-smoke100-2026-10-16T15-01-00",
+    "code_hash": "a47a9076e14a57a6",
+    "shape": "join",
+    "rate": 100,
+    "window": 200,
+    "label": "smoke100",
+    "duration_s": 10,
+    "writes": 1000,
+    "errors": 0,
+    "delivered": 1000,
+    "missing": 0,
+    "consistency_mismatches": 0,
+    "mismatch_examples": [],
+    "delivered_via_reset": 1000,
+    "updates": {
+      "changes": 0,
+      "rows": 997
+    },
+    "resets": 1000,
+    "latency_ms": {
+      "p50": 48.3,
+      "p90": 64.4,
+      "p99": 109.7,
+      "max": 111.5
+    },
+    "after_commit_ack_ms": {
+      "p50": 12.9,
+      "p99": 71.9
+    },
+    "write_ms": {
+      "p50": 38.3,
+      "p99": 45.9
+    },
+    "select1_rtt_ms_p50": 32.2,
+    "ws_rtt_ms_p50": 36.1,
+    "est_server_side_ms_p50": 14.1,
+    "wire_bytes_during_writes": 26896319,
+    "wire_bytes_per_write": 26896,
+    "wire_mb_per_s": 2.677,
+    "time_to_first_result_ms": 690.4,
+    "writes_queued_in_pool": 0,
+    "eld_p99_ms": {
+      "subscriber": 19,
+      "writer": 14.2
+    },
+    "loadavg_at_start": [
+      3.43,
+      4.9,
+      5.56
+    ]
+  },
+  {
+    "run_id": "join-10ps-w200-smoke-2026-10-16T14-58-52",
+    "code_hash": "a47a9076e14a57a6",
+    "shape": "join",
+    "rate": 10,
+    "window": 200,
+    "label": "smoke",
+    "duration_s": 15,
+    "writes": 150,
+    "errors": 0,
+    "delivered": 150,
+    "missing": 0,
+    "consistency_mismatches": 0,
+    "mismatch_examples": [],
+    "delivered_via_reset": 150,
+    "updates": {
+      "changes": 0,
+      "rows": 151
+    },
+    "resets": 150,
+    "latency_ms": {
+      "p50": 53.9,
+      "p90": 59.5,
+      "p99": 63.6,
+      "max": 67.5
+    },
+    "after_commit_ack_ms": {
+      "p50": 16.9,
+      "p99": 24.3
+    },
+    "write_ms": {
+      "p50": 37.4,
+      "p99": 45
+    },
+    "select1_rtt_ms_p50": 31.1,
+    "ws_rtt_ms_p50": 39.1,
+    "est_server_side_ms_p50": 18.8,
+    "wire_bytes_during_writes": 4025929,
+    "wire_bytes_per_write": 26840,
+    "wire_mb_per_s": 0.269,
+    "time_to_first_result_ms": 561.4,
+    "writes_queued_in_pool": 0,
+    "eld_p99_ms": {
+      "subscriber": 15.7,
+      "writer": 13.1
+    },
+    "loadavg_at_start": [
+      5.42,
+      6.21,
+      6.04
+    ]
+  },
+  {
+    "run_id": "plain-100ps-w200-smoke100-2026-10-16T15-00-25",
+    "code_hash": "a47a9076e14a57a6",
+    "shape": "plain",
+    "rate": 100,
+    "window": 200,
+    "label": "smoke100",
+    "duration_s": 10,
+    "writes": 1000,
+    "errors": 0,
+    "delivered": 1000,
+    "missing": 0,
+    "consistency_mismatches": 0,
+    "mismatch_examples": [],
+    "delivered_via_reset": 0,
+    "updates": {
+      "changes": 1000,
+      "rows": 1
+    },
+    "resets": 0,
+    "latency_ms": {
+      "p50": 39.8,
+      "p90": 42.4,
+      "p99": 52.8,
+      "max": 63.9
+    },
+    "after_commit_ack_ms": {
+      "p50": 6.3,
+      "p99": 14.3
+    },
+    "write_ms": {
+      "p50": 33.5,
+      "p99": 40.3
+    },
+    "select1_rtt_ms_p50": 33.1,
+    "ws_rtt_ms_p50": 42.4,
+    "est_server_side_ms_p50": 2,
+    "wire_bytes_during_writes": 502991,
+    "wire_bytes_per_write": 503,
+    "wire_mb_per_s": 0.05,
+    "time_to_first_result_ms": 642.6,
+    "writes_queued_in_pool": 0,
+    "eld_p99_ms": {
+      "subscriber": 12.4,
+      "writer": 16.6
+    },
+    "loadavg_at_start": [
+      2.17,
+      4.88,
+      5.58
+    ]
+  },
+  {
+    "run_id": "plain-10ps-w200-smoke-2026-10-16T14-58-11",
+    "code_hash": "a47a9076e14a57a6",
+    "shape": "plain",
+    "rate": 10,
+    "window": 200,
+    "label": "smoke",
+    "duration_s": 15,
+    "writes": 150,
+    "errors": 0,
+    "delivered": 150,
+    "missing": 0,
+    "consistency_mismatches": 0,
+    "mismatch_examples": [],
+    "delivered_via_reset": 0,
+    "updates": {
+      "changes": 150,
+      "rows": 1
+    },
+    "resets": 0,
+    "latency_ms": {
+      "p50": 43.9,
+      "p90": 46.4,
+      "p99": 53.9,
+      "max": 66.3
+    },
+    "after_commit_ack_ms": {
+      "p50": 4.6,
+      "p99": 14.2
+    },
+    "write_ms": {
+      "p50": 38.2,
+      "p99": 54.4
+    },
+    "select1_rtt_ms_p50": 35.6,
+    "ws_rtt_ms_p50": 43,
+    "est_server_side_ms_p50": 4.6,
+    "wire_bytes_during_writes": 75918,
+    "wire_bytes_per_write": 506,
+    "wire_mb_per_s": 0.005,
+    "time_to_first_result_ms": 673.6,
+    "writes_queued_in_pool": 0,
+    "eld_p99_ms": {
+      "subscriber": 17,
+      "writer": 18.6
+    },
+    "loadavg_at_start": [
+      5.73,
+      6.29,
+      6.06
+    ]
+  }
+]

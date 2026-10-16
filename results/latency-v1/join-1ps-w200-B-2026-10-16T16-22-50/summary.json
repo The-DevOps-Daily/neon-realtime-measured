@@ -1,0 +1,125 @@
+{
+  "run_id": "join-1ps-w200-B-2026-10-16T16-22-50",
+  "code_hash": "9bf5cd42f22ec314",
+  "shape": "join",
+  "rate": 1,
+  "window": 200,
+  "label": "B",
+  "duration_s": 600,
+  "writes": 600,
+  "errors": 0,
+  "delivered": 600,
+  "missing": 0,
+  "consistency_mismatches": 0,
+  "mismatch_examples": [],
+  "delivered_via_reset": 600,
+  "updates": {
+    "changes": 0,
+    "rows": 600
+  },
+  "resets": 600,
+  "latency_ms": {
+    "p50": 58.7,
+    "p90": 91.5,
+    "p99": 2549.9,
+    "max": 6359.6
+  },
+  "after_commit_ack_ms": {
+    "p50": 21,
+    "p99": 2166.1
+  },
+  "write_ms": {
+    "p50": 37.8,
+    "p99": 619.4
+  },
+  "select1_rtt_ms_p50": 31.5,
+  "ws_rtt_ms_p50": 40,
+  "est_server_side_ms_p50": 23,
+  "wire_bytes_during_writes": 16320765,
+  "wire_bytes_per_write": 27201,
+  "wire_mb_per_s": 0.027,
+  "time_to_first_result_ms": 894.3,
+  "writes_queued_in_pool": 7,
+  "eld_p99_ms": {
+    "subscriber": 15.5,
+    "writer": 14.2
+  },
+  "loadavg_at_start": [
+    2.45,
+    6.49,
+    5.33
+  ],
+  "server_errors": [],
+  "slow_episodes": [
+    {
+      "start": 1792167803913.928,
+      "writes": 1,
+      "worst_ms": 1218.7,
+      "worst_ack_ms": 37.2,
+      "cause": "update path"
+    },
+    {
+      "start": 1792167815914.4946,
+      "writes": 1,
+      "worst_ms": 1200.4,
+      "worst_ack_ms": 38.5,
+      "cause": "update path"
+    },
+    {
+      "start": 1792167825914.1558,
+      "writes": 2,
+      "worst_ms": 1147.7,
+      "worst_ack_ms": 41.9,
+      "cause": "update path"
+    },
+    {
+      "start": 1792167834914.4358,
+      "writes": 2,
+      "worst_ms": 568.3,
+      "worst_ack_ms": 40.2,
+      "cause": "update path"
+    },
+    {
+      "start": 1792167885914.0203,
+      "writes": 1,
+      "worst_ms": 662.7,
+      "worst_ack_ms": 39.7,
+      "cause": "update path"
+    },
+    {
+      "start": 1792168119914.0737,
+      "writes": 9,
+      "worst_ms": 6359.6,
+      "worst_ack_ms": 1068.3,
+      "cause": "write path (slow commit ack)"
+    },
+    {
+      "start": 1792168330914.2456,
+      "writes": 1,
+      "worst_ms": 549,
+      "worst_ack_ms": 40.5,
+      "cause": "update path"
+    },
+    {
+      "start": 1792168339914.7112,
+      "writes": 4,
+      "worst_ms": 3681.2,
+      "worst_ack_ms": 3629.5,
+      "cause": "write path (slow commit ack)"
+    },
+    {
+      "start": 1792168355915.6057,
+      "writes": 5,
+      "worst_ms": 1541,
+      "worst_ack_ms": 1373.7,
+      "cause": "write path (slow commit ack)"
+    },
+    {
+      "start": 1792168371914.6716,
+      "writes": 4,
+      "worst_ms": 3117.6,
+      "worst_ack_ms": 45,
+      "cause": "update path"
+    }
+  ]
+}

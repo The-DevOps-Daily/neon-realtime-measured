@@ -1,0 +1,2 @@
+Updated neon.ts: set auth: false → true.
+Next: `neon config plan` to preview, `neon config apply` to provision.

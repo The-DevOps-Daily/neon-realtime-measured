@@ -1,0 +1,26 @@
+Live query
+Project   purple-term-17791629
+Branch    main (br-frosty-queen-baejcesa)
+Database  neondb
+Mode      Raw changes
+Query     SELECT id, status, total_cents FROM orders WHERE store_id = 1
+[2026-10-16T14:47:37.225Z] Connecting…
+
+[2026-10-16T14:47:37.534Z] Rows · 2 rows
+Row ID                                                            Row
+3750d930e87b821a16204dfa4560caf176ab798221c1b6acf0d6d5bb1f87b77b  {"id":1,"status":"ready","total_cents":1250}
+98c1f8fe4f45648471336ccf09b6109e400b78ce64bc499ff840351ad6be27d3  {"id":2,"status":"new","total_cents":830}
+[2026-10-16T14:47:37.538Z] Live — waiting for changes.
+
+[2026-10-16T14:47:47.823Z] Transaction 1056 · 1 upsert, 0 removals
+Type    Row ID                                                            Row
+upsert  b2c84d4ce161a690ba1530dd127e5a50fc194afac256eee98b497bb76cd9c5d2  {"id":3,"status":"new","total_cents":1250}
+
+[2026-10-16T14:47:50.263Z] Transaction 1057 · 1 upsert, 0 removals
+Type    Row ID                                                            Row
+upsert  3750d930e87b821a16204dfa4560caf176ab798221c1b6acf0d6d5bb1f87b77b  {"id":1,"status":"preparing","total_cents":1250}
+
+[2026-10-16T14:47:53.314Z] Transaction 1058 · 2 upserts, 0 removals
+Type    Row ID                                                            Row
+upsert  3750d930e87b821a16204dfa4560caf176ab798221c1b6acf0d6d5bb1f87b77b  {"id":1,"status":"ready","total_cents":1250}
+upsert  b4236424ee1daa039e7d63b105ccacc340a1500b1cc63bb123c5bd5ea2de3e03  {"id":4,"status":"new","total_cents":830}

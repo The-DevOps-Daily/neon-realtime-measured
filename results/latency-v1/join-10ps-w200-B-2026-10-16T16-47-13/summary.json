@@ -1,0 +1,76 @@
+{
+  "run_id": "join-10ps-w200-B-2026-10-16T16-47-13",
+  "code_hash": "9bf5cd42f22ec314",
+  "shape": "join",
+  "rate": 10,
+  "window": 200,
+  "label": "B",
+  "duration_s": 180,
+  "writes": 1800,
+  "errors": 0,
+  "delivered": 1800,
+  "missing": 0,
+  "consistency_mismatches": 0,
+  "mismatch_examples": [],
+  "delivered_via_reset": 1800,
+  "updates": {
+    "changes": 0,
+    "rows": 1755
+  },
+  "resets": 1788,
+  "latency_ms": {
+    "p50": 54.5,
+    "p90": 65.8,
+    "p99": 522.2,
+    "max": 4173.2
+  },
+  "after_commit_ack_ms": {
+    "p50": 17.4,
+    "p99": 119.4
+  },
+  "write_ms": {
+    "p50": 37.2,
+    "p99": 368.9
+  },
+  "select1_rtt_ms_p50": 31.6,
+  "ws_rtt_ms_p50": 40.8,
+  "est_server_side_ms_p50": 18.3,
+  "wire_bytes_during_writes": 47878394,
+  "wire_bytes_per_write": 26599,
+  "wire_mb_per_s": 0.266,
+  "time_to_first_result_ms": 708.2,
+  "writes_queued_in_pool": 62,
+  "eld_p99_ms": {
+    "subscriber": 21.3,
+    "writer": 13.1
+  },
+  "loadavg_at_start": [
+    0.71,
+    1.78,
+    3.75
+  ],
+  "server_errors": [
+    {
+      "t": 1792169321822.3218,
+      "type": "connection_error",
+      "code": "backend_session_lost",
+      "message": "live query session ended; reconnect required"
+    }
+  ],
+  "slow_episodes": [
+    {
+      "start": 1792169321812.3472,
+      "writes": 10,
+      "worst_ms": 1289.8,
+      "worst_ack_ms": 38.2,
+      "cause": "server ended the live query session"
+    },
+    {
+      "start": 1792169359912.159,
+      "writes": 43,
+      "worst_ms": 4173.2,
+      "worst_ack_ms": 2347.8,
+      "cause": "write path (slow commit ack)"
+    }
+  ]
+}

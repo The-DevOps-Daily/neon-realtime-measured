@@ -1,0 +1,8 @@
+Linked .neon
+  Project         realtime-measured (purple-term-17791629)
+  Branch          main
+  Org             org-crimson-cake-56444211
+
+Pulled 3 Neon variables into .env
+  Postgres        DATABASE_URL, DATABASE_URL_UNPOOLED
+  Branch          NEON_BRANCH

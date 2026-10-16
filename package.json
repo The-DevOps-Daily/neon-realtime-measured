@@ -1,0 +1,54 @@
+{
+  "name": "neon-realtime-measured",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Neon Realtime measured on a real Neon project: live order board plus latency, scale-to-zero, reconnect and sealed-query tamper scripts.",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.18"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "@types/pg": "^8.23.1",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@types/ws": "^8.18.2",
+    "@vitejs/plugin-react": "^6.1.2",
+    "neon": "^8.7.2",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.4"
+  },
+  "dependencies": {
+    "@hono/node-server": "^2.1.5",
+    "@neon/config": "^1.9.2",
+    "@neon/env": "^1.6.3",
+    "@neon/realtime": "^0.1.0",
+    "@neon/realtime-drizzle": "^0.1.0",
+    "@neon/realtime-react": "^0.1.0",
+    "drizzle-orm": "^0.45.4",
+    "hono": "^4.13.13",
+    "jose": "^6.2.12",
+    "pg": "^8.23.1",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "ws": "^8.22.0"
+  },
+  "scripts": {
+    "migrate": "node scripts/migrate.ts",
+    "inspect": "node scripts/inspect.ts",
+    "explore": "node scripts/explore-incremental.ts",
+    "bench": "bash scripts/bench-matrix.sh",
+    "bench:one": "node scripts/bench-run.ts",
+    "bench:score": "node scripts/bench-score.ts results/latency",
+    "tamper": "node scripts/tamper.ts",
+    "scoping": "node scripts/scoping.ts",
+    "reconnect": "node scripts/reconnect.ts",
+    "scale-to-zero": "node scripts/scale-to-zero.ts",
+    "impact": "node scripts/primary-impact.ts",
+    "board:seed": "node scripts/seed-board.ts",
+    "board:api": "node server/index.ts",
+    "board:web": "vite web",
+    "typecheck": "tsc -p tsconfig.json"
+  }
+}

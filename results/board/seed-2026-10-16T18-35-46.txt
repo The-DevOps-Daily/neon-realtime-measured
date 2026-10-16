@@ -1,0 +1,1 @@
+board seeded. Sign in as alice.realtime@example.com or bob.realtime@example.com (passwords in data/users.json)

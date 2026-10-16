@@ -1,0 +1,27 @@
+Live query
+Project   purple-term-17791629
+Branch    main (br-frosty-queen-baejcesa)
+Database  neondb
+Mode      Materialized result
+Query     SELECT o.id, o.status, o.total_cents, c.name AS customer FROM orders o JOIN customers c ON c.id = o.customer_id
+[2026-10-16T14:46:41.545Z] Connecting…
+
+[2026-10-16T14:46:43.904Z] Initial snapshot · 0 rows
+Query returned no rows.
+[2026-10-16T14:46:43.905Z] Live — waiting for changes.
+
+[2026-10-16T14:46:48.844Z] Rows · 0 rows
+Query returned no rows.
+
+[2026-10-16T14:46:48.862Z] Rows · 1 row
+ID  Status  Total Cents  Customer
+1   new     1250         Ada
+
+[2026-10-16T14:46:51.913Z] Rows · 1 row
+ID  Status     Total Cents  Customer
+1   preparing  1250         Ada
+
+[2026-10-16T14:46:54.952Z] Rows · 2 rows
+ID  Status  Total Cents  Customer
+1   ready   1250         Ada
+2   new     830          Grace

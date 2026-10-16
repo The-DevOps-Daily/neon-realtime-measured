@@ -1,0 +1,54 @@
+{
+  "run_id": "plain-100ps-w200-B-2026-10-16T16-52-05",
+  "code_hash": "9bf5cd42f22ec314",
+  "shape": "plain",
+  "rate": 100,
+  "window": 200,
+  "label": "B",
+  "duration_s": 60,
+  "writes": 6000,
+  "errors": 0,
+  "delivered": 6000,
+  "missing": 0,
+  "consistency_mismatches": 0,
+  "mismatch_examples": [],
+  "delivered_via_reset": 0,
+  "updates": {
+    "changes": 6000,
+    "rows": 1
+  },
+  "resets": 0,
+  "latency_ms": {
+    "p50": 40.3,
+    "p90": 44.2,
+    "p99": 53.9,
+    "max": 293.2
+  },
+  "after_commit_ack_ms": {
+    "p50": 3.8,
+    "p99": 14.1
+  },
+  "write_ms": {
+    "p50": 37.5,
+    "p99": 45.5
+  },
+  "select1_rtt_ms_p50": 32.2,
+  "ws_rtt_ms_p50": 41.3,
+  "est_server_side_ms_p50": 3.6,
+  "wire_bytes_during_writes": 3056340,
+  "wire_bytes_per_write": 509,
+  "wire_mb_per_s": 0.051,
+  "time_to_first_result_ms": 523,
+  "writes_queued_in_pool": 10,
+  "eld_p99_ms": {
+    "subscriber": 17.2,
+    "writer": 16.3
+  },
+  "loadavg_at_start": [
+    1.71,
+    1.86,
+    3.24
+  ],
+  "server_errors": [],
+  "slow_episodes": []
+}

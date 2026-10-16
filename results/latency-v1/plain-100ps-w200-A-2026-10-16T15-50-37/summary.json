@@ -1,0 +1,69 @@
+{
+  "run_id": "plain-100ps-w200-A-2026-10-16T15-50-37",
+  "code_hash": "9bf5cd42f22ec314",
+  "shape": "plain",
+  "rate": 100,
+  "window": 200,
+  "label": "A",
+  "duration_s": 60,
+  "writes": 6000,
+  "errors": 0,
+  "delivered": 6000,
+  "missing": 0,
+  "consistency_mismatches": 0,
+  "mismatch_examples": [],
+  "delivered_via_reset": 0,
+  "updates": {
+    "changes": 6000,
+    "rows": 1
+  },
+  "resets": 0,
+  "latency_ms": {
+    "p50": 39.2,
+    "p90": 42,
+    "p99": 46.3,
+    "max": 304.6
+  },
+  "after_commit_ack_ms": {
+    "p50": 4.4,
+    "p99": 9.4
+  },
+  "write_ms": {
+    "p50": 35.9,
+    "p99": 40.1
+  },
+  "select1_rtt_ms_p50": 39,
+  "ws_rtt_ms_p50": 42.2,
+  "est_server_side_ms_p50": -1.4,
+  "wire_bytes_during_writes": 3056340,
+  "wire_bytes_per_write": 509,
+  "wire_mb_per_s": 0.051,
+  "time_to_first_result_ms": 515.8,
+  "writes_queued_in_pool": 0,
+  "eld_p99_ms": {
+    "subscriber": 11.8,
+    "writer": 11.2
+  },
+  "loadavg_at_start": [
+    0.46,
+    1.41,
+    1.9
+  ],
+  "server_errors": [],
+  "slow_episodes": [
+    {
+      "start": 1792165874030.696,
+      "writes": 1,
+      "worst_ms": 304.6,
+      "worst_ack_ms": 299.4,
+      "cause": "update path"
+    },
+    {
+      "start": 1792165904041.5603,
+      "writes": 1,
+      "worst_ms": 303.9,
+      "worst_ack_ms": 298.6,
+      "cause": "update path"
+    }
+  ]
+}

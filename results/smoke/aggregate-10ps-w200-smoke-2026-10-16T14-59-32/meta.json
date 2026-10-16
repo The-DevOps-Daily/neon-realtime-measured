@@ -1,0 +1,27 @@
+{
+  "run_id": "aggregate-10ps-w200-smoke-2026-10-16T14-59-32",
+  "code_hash": "a47a9076e14a57a6",
+  "shape": "aggregate",
+  "rate": 10,
+  "duration": 15,
+  "window": 200,
+  "label": "smoke",
+  "store_id": 1000,
+  "user": "bench-user-1000",
+  "seed": 1000,
+  "started_at": "2026-10-16T14:59:32.827Z",
+  "node": "v24.14.0",
+  "sdk": "@neon/realtime@0.1.0",
+  "region": "aws-eu-central-1",
+  "compute": {
+    "id": "ep-morning-hall-ba4xiwgd",
+    "min_cu": 0.25,
+    "max_cu": 1
+  },
+  "loadavg_at_start": [
+    3.45,
+    5.61,
+    5.85
+  ],
+  "waited_for_load_s": 2
+}

@@ -1,0 +1,28 @@
+Live query
+Project   purple-term-17791629
+Branch    main (br-frosty-queen-baejcesa)
+Database  neondb
+Mode      Raw changes
+Query     SELECT status, count(*)::int AS orders, sum(total_cents)::int AS revenue_cents FROM orders WHERE store_id = 1 GROUP BY status
+[2026-10-16T14:47:36.898Z] Connecting…
+
+[2026-10-16T14:47:37.484Z] Rows · 2 rows
+Row ID                                                            Row
+c2c87ddad0246b173f098d39a23d2b46bad5bf87ef5c46b43c235dd413a94546  {"status":"new","orders":1,"revenue_cents":830}
+d60d83df677c162a4185423e00251a9c2b58a0ca502c4c4ab923dbbfe9f3ddd4  {"status":"ready","orders":1,"revenue_cents":1250}
+[2026-10-16T14:47:37.489Z] Live — waiting for changes.
+
+[2026-10-16T14:47:47.830Z] Rows · 2 rows
+Row ID                                                            Row
+c2c87ddad0246b173f098d39a23d2b46bad5bf87ef5c46b43c235dd413a94546  {"status":"new","orders":2,"revenue_cents":2080}
+d60d83df677c162a4185423e00251a9c2b58a0ca502c4c4ab923dbbfe9f3ddd4  {"status":"ready","orders":1,"revenue_cents":1250}
+
+[2026-10-16T14:47:50.271Z] Rows · 2 rows
+Row ID                                                            Row
+c2c87ddad0246b173f098d39a23d2b46bad5bf87ef5c46b43c235dd413a94546  {"status":"new","orders":2,"revenue_cents":2080}
+d60d83df677c162a4185423e00251a9c2b58a0ca502c4c4ab923dbbfe9f3ddd4  {"status":"preparing","orders":1,"revenue_cents":1250}
+
+[2026-10-16T14:47:53.321Z] Rows · 2 rows
+Row ID                                                            Row
+c2c87ddad0246b173f098d39a23d2b46bad5bf87ef5c46b43c235dd413a94546  {"status":"new","orders":3,"revenue_cents":2910}
+d60d83df677c162a4185423e00251a9c2b58a0ca502c4c4ab923dbbfe9f3ddd4  {"status":"ready","orders":1,"revenue_cents":1250}

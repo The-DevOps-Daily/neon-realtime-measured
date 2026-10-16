@@ -1,0 +1,13 @@
+2026-10-16T14:44:07Z
+→ Applying to branch main (br-frosty-queen-baejcesa)
+Applied changes
+  + Neon Auth
+  + Realtime
+
+Utilized services: Postgres, Neon Auth, Realtime
+Pulled 7 Neon variables into .env
+  Postgres        DATABASE_URL, DATABASE_URL_UNPOOLED
+  Branch          NEON_BRANCH
+  Neon Auth       NEON_AUTH_BASE_URL, NEON_AUTH_JWKS_URL
+  Realtime        NEON_REALTIME_URL, NEON_REALTIME_SECRET
+2026-10-16T14:44:26Z

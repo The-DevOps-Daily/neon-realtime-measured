@@ -1,0 +1,102 @@
+{
+  "run_id": "join-100ps-w200-B-2026-10-16T18-16-57",
+  "code_hash": "24b7c8ee202e1939",
+  "shape": "join",
+  "rate": 100,
+  "window": 200,
+  "label": "B",
+  "duration_s": 60,
+  "writes": 6000,
+  "errors": 0,
+  "delivered": 6000,
+  "missing": 0,
+  "consistency_mismatches": 0,
+  "mismatch_examples": [],
+  "delivered_via_reset": 6000,
+  "updates": {
+    "changes": 0,
+    "rows": 5882
+  },
+  "resets": 5886,
+  "latency_ms": {
+    "p50": 59.6,
+    "p90": 78.2,
+    "p99": 636.7,
+    "max": 1237.4
+  },
+  "after_commit_ack_ms": {
+    "p50": 23.2,
+    "p99": 600
+  },
+  "write_ms": {
+    "p50": 36.4,
+    "p99": 41.9
+  },
+  "select1_rtt_ms_p50": 33.2,
+  "ws_rtt_ms_p50": 45.1,
+  "est_server_side_ms_p50": 20.4,
+  "stall_data": true,
+  "client_stalls": {
+    "writer": {
+      "count": 0,
+      "total_ms": 0,
+      "max_ms": 0
+    },
+    "subscriber": {
+      "count": 10,
+      "total_ms": 1602,
+      "max_ms": 470
+    }
+  },
+  "writes_overlapping_client_stall": 206,
+  "latency_clean_ms": {
+    "p50": 59.3,
+    "p90": 71.7,
+    "p99": 667.4,
+    "max": 1237.4
+  },
+  "after_commit_ack_clean_ms": {
+    "p50": 22.9,
+    "p99": 635.1
+  },
+  "wire_bytes_during_writes": 162253849,
+  "wire_bytes_per_write": 27042,
+  "wire_mb_per_s": 2.702,
+  "time_to_first_result_ms": 648.9,
+  "writes_queued_in_pool": 0,
+  "eld_p99_ms": {
+    "subscriber": 24.6,
+    "writer": 11.2
+  },
+  "loadavg_at_start": [
+    0.38,
+    0.45,
+    0.51
+  ],
+  "server_errors": [
+    {
+      "t": 1792174663178.2268,
+      "type": "connection_error",
+      "code": "backend_session_lost",
+      "message": "live query session ended; reconnect required"
+    }
+  ],
+  "slow_episodes": [
+    {
+      "start": 1792174663128.9583,
+      "writes": 94,
+      "worst_ms": 1237.4,
+      "worst_ack_ms": 290.8,
+      "client_stall_ms": 0,
+      "cause": "server ended the live query session"
+    },
+    {
+      "start": 1792174686118.735,
+      "writes": 3,
+      "worst_ms": 331,
+      "worst_ack_ms": 306.6,
+      "client_stall_ms": 0,
+      "cause": "write path (slow commit ack)"
+    }
+  ]
+}

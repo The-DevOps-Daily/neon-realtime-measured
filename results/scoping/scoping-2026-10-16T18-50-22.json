@@ -1,0 +1,131 @@
+{
+  "code_hash": "91880f668a6e9119",
+  "summary": {
+    "case1": {
+      "emptied_ms_after_commit": 8,
+      "orders_after_removal": 6,
+      "leaked": 0
+    },
+    "case2": {
+      "orders_after_removal": 18,
+      "leaked": 12,
+      "last_leak_s_after_removal": 55.5,
+      "sealed_expires_s_after_removal": 59.5
+    },
+    "case3": {
+      "initial_rows": 37,
+      "orders_added": 18,
+      "received": 12,
+      "last_received_s_after_seal": 56,
+      "sealed_lifetime_s": 59.6
+    }
+  },
+  "log": [
+    {
+      "s": 4.4,
+      "who": "alice",
+      "what": "state live"
+    },
+    {
+      "s": 4.4,
+      "who": "alice",
+      "what": "live with 1 open orders"
+    },
+    {
+      "s": 4.4,
+      "who": "admin",
+      "what": "removed alice from Harbour",
+      "commit_ms": 36
+    },
+    {
+      "s": 4.4,
+      "who": "alice",
+      "what": "result empty 8 ms after the removal committed"
+    },
+    {
+      "s": 53.2,
+      "who": "alice",
+      "what": "renew refused: HTTP 403 {\"error\":\"not a member of this store\"} (retried every second from here)"
+    },
+    {
+      "s": 63,
+      "who": "alice",
+      "what": "state stale"
+    },
+    {
+      "s": 64.7,
+      "who": "alice",
+      "what": "0 of 6 orders added after removal reached her"
+    },
+    {
+      "s": 64.7,
+      "who": "alice",
+      "what": "state closed"
+    },
+    {
+      "s": 65.5,
+      "who": "bob",
+      "what": "state live"
+    },
+    {
+      "s": 65.5,
+      "who": "bob",
+      "what": "live with 7 open orders (seal-time check only)"
+    },
+    {
+      "s": 65.5,
+      "who": "admin",
+      "what": "removed bob from Harbour"
+    },
+    {
+      "s": 115.2,
+      "who": "bob",
+      "what": "renew refused: HTTP 403 not a member (retried every second from here)"
+    },
+    {
+      "s": 125,
+      "who": "bob",
+      "what": "state stale"
+    },
+    {
+      "s": 159.2,
+      "who": "bob",
+      "what": "12 of 18 orders added after removal reached him; the last was added 56 s after removal"
+    },
+    {
+      "s": 159.2,
+      "who": "bob",
+      "what": "state closed"
+    },
+    {
+      "s": 159.8,
+      "who": "eve",
+      "what": "state live"
+    },
+    {
+      "s": 159.8,
+      "who": "eve",
+      "what": "live on bob's sealed query with 25 of Harbour's open orders"
+    },
+    {
+      "s": 209.2,
+      "who": "eve",
+      "what": "renew refused: HTTP 403 {\"error\":\"not a member of this store\"} (retried every second from here)"
+    },
+    {
+      "s": 219,
+      "who": "eve",
+      "what": "state stale"
+    },
+    {
+      "s": 253.6,
+      "who": "eve",
+      "what": "12 of 18 new orders reached her; the last was added 56 s after bob's query was sealed"
+    },
+    {
+      "s": 253.6,
+      "who": "eve",
+      "what": "state closed"
+    }
+  ]
+}

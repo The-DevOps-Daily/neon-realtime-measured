@@ -1,0 +1,554 @@
+{
+  "code_hash": "9bf5cd42f22ec314",
+  "pooled": [
+    {
+      "shape": "plain",
+      "rate": 1,
+      "runs": "B",
+      "writes": 600,
+      "missing": 0,
+      "mismatches": 0,
+      "p50": 43,
+      "p90": 54,
+      "p99": 5433.8,
+      "max": 13451.8,
+      "ack_p50": 6.3,
+      "ack_p99": 2480.3,
+      "write_p50": 37.3,
+      "write_p99": 3789.8,
+      "per_round_p50": "B:43",
+      "per_round_p99": "B:5433.8",
+      "bytes_per_write": 614,
+      "resets": 0,
+      "session_losses": 1,
+      "select1_rtt_p50": 35.8,
+      "ws_rtt_p50": 39.3
+    },
+    {
+      "shape": "join",
+      "rate": 1,
+      "runs": "A+B",
+      "writes": 1200,
+      "missing": 0,
+      "mismatches": 0,
+      "p50": 56.3,
+      "p90": 74.2,
+      "p99": 1668.6,
+      "max": 6359.6,
+      "ack_p50": 18.8,
+      "ack_p99": 1162,
+      "write_p50": 38.3,
+      "write_p99": 142.1,
+      "per_round_p50": "A:55.6 B:58.7",
+      "per_round_p99": "A:99.9 B:2549.9",
+      "bytes_per_write": 27122,
+      "resets": 1200,
+      "session_losses": 0,
+      "select1_rtt_p50": 31.5,
+      "ws_rtt_p50": 40
+    },
+    {
+      "shape": "aggregate",
+      "rate": 1,
+      "runs": "A+B",
+      "writes": 1200,
+      "missing": 0,
+      "mismatches": 0,
+      "p50": 43.8,
+      "p90": 50,
+      "p99": 86.2,
+      "max": 1368.7,
+      "ack_p50": 3.5,
+      "ack_p99": 47,
+      "write_p50": 40.6,
+      "write_p99": 48.2,
+      "per_round_p50": "A:43.9 B:43.6",
+      "per_round_p99": "A:86.1 B:87.1",
+      "bytes_per_write": 991,
+      "resets": 1197,
+      "session_losses": 2,
+      "select1_rtt_p50": 35.2,
+      "ws_rtt_p50": 35.2
+    },
+    {
+      "shape": "plain",
+      "rate": 10,
+      "runs": "A+B",
+      "writes": 3600,
+      "missing": 0,
+      "mismatches": 0,
+      "p50": 41.8,
+      "p90": 46.7,
+      "p99": 83.1,
+      "max": 1599.2,
+      "ack_p50": 0.9,
+      "ack_p99": 43.6,
+      "write_p50": 42.3,
+      "write_p99": 47.3,
+      "per_round_p50": "A:44.9 B:40.6",
+      "per_round_p99": "A:456.3 B:48.1",
+      "bytes_per_write": 518,
+      "resets": 0,
+      "session_losses": 1,
+      "select1_rtt_p50": 38.5,
+      "ws_rtt_p50": 34.6
+    },
+    {
+      "shape": "join",
+      "rate": 10,
+      "runs": "A+B",
+      "writes": 3600,
+      "missing": 0,
+      "mismatches": 0,
+      "p50": 53.7,
+      "p90": 63.9,
+      "p99": 2080.9,
+      "max": 4173.2,
+      "ack_p50": 12.4,
+      "ack_p99": 1479.2,
+      "write_p50": 42.8,
+      "write_p99": 402.5,
+      "per_round_p50": "A:52.4 B:54.5",
+      "per_round_p99": "A:2960.4 B:522.2",
+      "bytes_per_write": 26653,
+      "resets": 3577,
+      "session_losses": 2,
+      "select1_rtt_p50": 31.6,
+      "ws_rtt_p50": 33.4
+    },
+    {
+      "shape": "aggregate",
+      "rate": 10,
+      "runs": "A+B",
+      "writes": 3600,
+      "missing": 0,
+      "mismatches": 0,
+      "p50": 41.5,
+      "p90": 45.8,
+      "p99": 81.2,
+      "max": 1452.2,
+      "ack_p50": 2.3,
+      "ack_p99": 43.8,
+      "write_p50": 39.4,
+      "write_p99": 46.7,
+      "per_round_p50": "A:41.6 B:41.3",
+      "per_round_p99": "A:79.3 B:81.5",
+      "bytes_per_write": 930,
+      "resets": 3573,
+      "session_losses": 2,
+      "select1_rtt_p50": 38.9,
+      "ws_rtt_p50": 35
+    },
+    {
+      "shape": "plain",
+      "rate": 100,
+      "runs": "A+B",
+      "writes": 12000,
+      "missing": 0,
+      "mismatches": 0,
+      "p50": 39.5,
+      "p90": 43.1,
+      "p99": 51.7,
+      "max": 304.6,
+      "ack_p50": 3.9,
+      "ack_p99": 12.3,
+      "write_p50": 36.9,
+      "write_p99": 43.8,
+      "per_round_p50": "A:39.2 B:40.3",
+      "per_round_p99": "A:46.3 B:53.9",
+      "bytes_per_write": 509,
+      "resets": 0,
+      "session_losses": 0,
+      "select1_rtt_p50": 32.2,
+      "ws_rtt_p50": 41.3
+    },
+    {
+      "shape": "join",
+      "rate": 100,
+      "runs": "A+B",
+      "writes": 12000,
+      "missing": 0,
+      "mismatches": 0,
+      "p50": 2538.6,
+      "p90": 26344.5,
+      "p99": 33542.9,
+      "max": 34740.5,
+      "ack_p50": 2496,
+      "ack_p99": 33505.3,
+      "write_p50": 37.1,
+      "write_p99": 1958.8,
+      "per_round_p50": "A:64.6 B:16193.2",
+      "per_round_p99": "A:3244.6 B:34139.4",
+      "bytes_per_write": 19308,
+      "resets": 8635,
+      "session_losses": 2,
+      "select1_rtt_p50": 33.4,
+      "ws_rtt_p50": 39.9
+    },
+    {
+      "shape": "aggregate",
+      "rate": 100,
+      "runs": "A+B",
+      "writes": 12000,
+      "missing": 0,
+      "mismatches": 0,
+      "p50": 40.6,
+      "p90": 44.3,
+      "p99": 60.6,
+      "max": 303.9,
+      "ack_p50": 6.9,
+      "ack_p99": 23.8,
+      "write_p50": 33.8,
+      "write_p99": 44,
+      "per_round_p50": "A:40.6 B:40.6",
+      "per_round_p99": "A:57.6 B:64.4",
+      "bytes_per_write": 936,
+      "resets": 12000,
+      "session_losses": 0,
+      "select1_rtt_p50": 33,
+      "ws_rtt_p50": 40.8
+    }
+  ],
+  "episodes": [
+    {
+      "run": "aggregate 100/s A",
+      "at": "15:53:56",
+      "writes": 1,
+      "worst_ms": 303.3,
+      "worst_ack_ms": 301.1,
+      "cause": "write path (slow commit ack)"
+    },
+    {
+      "run": "aggregate 100/s B",
+      "at": "16:51:14",
+      "writes": 1,
+      "worst_ms": 303.9,
+      "worst_ack_ms": 300.3,
+      "cause": "write path (slow commit ack)"
+    },
+    {
+      "run": "aggregate 10/s A",
+      "at": "15:50:05",
+      "writes": 12,
+      "worst_ms": 1452.2,
+      "worst_ack_ms": 45.3,
+      "cause": "server ended the live query session"
+    },
+    {
+      "run": "aggregate 10/s B",
+      "at": "16:42:41",
+      "writes": 9,
+      "worst_ms": 1197,
+      "worst_ack_ms": 40,
+      "cause": "server ended the live query session"
+    },
+    {
+      "run": "aggregate 1/s B",
+      "at": "15:55:06",
+      "writes": 1,
+      "worst_ms": 564.6,
+      "worst_ack_ms": 38.9,
+      "cause": "server ended the live query session"
+    },
+    {
+      "run": "aggregate 1/s B",
+      "at": "16:01:06",
+      "writes": 2,
+      "worst_ms": 1368.7,
+      "worst_ack_ms": 40.9,
+      "cause": "server ended the live query session"
+    },
+    {
+      "run": "join 100/s A",
+      "at": "15:52:44",
+      "writes": 2,
+      "worst_ms": 371,
+      "worst_ack_ms": 330.4,
+      "cause": "write path (slow commit ack)"
+    },
+    {
+      "run": "join 100/s A",
+      "at": "15:52:57",
+      "writes": 1542,
+      "worst_ms": 3371.7,
+      "worst_ack_ms": 47.4,
+      "cause": "update path"
+    },
+    {
+      "run": "join 100/s B",
+      "at": "16:53:46",
+      "writes": 2889,
+      "worst_ms": 34740.5,
+      "worst_ack_ms": 5810.7,
+      "cause": "write path (slow commit ack)"
+    },
+    {
+      "run": "join 100/s B",
+      "at": "16:54:20",
+      "writes": 3102,
+      "worst_ms": 26345.4,
+      "worst_ack_ms": 2228.8,
+      "cause": "write path (slow commit ack)"
+    },
+    {
+      "run": "join 10/s A",
+      "at": "15:44:18",
+      "writes": 95,
+      "worst_ms": 3972.5,
+      "worst_ack_ms": 3669.7,
+      "cause": "write path (slow commit ack)"
+    },
+    {
+      "run": "join 10/s A",
+      "at": "15:46:05",
+      "writes": 9,
+      "worst_ms": 1145.9,
+      "worst_ack_ms": 44.1,
+      "cause": "server ended the live query session"
+    },
+    {
+      "run": "join 10/s B",
+      "at": "16:48:41",
+      "writes": 10,
+      "worst_ms": 1289.8,
+      "worst_ack_ms": 38.2,
+      "cause": "server ended the live query session"
+    },
+    {
+      "run": "join 10/s B",
+      "at": "16:49:19",
+      "writes": 43,
+      "worst_ms": 4173.2,
+      "worst_ack_ms": 2347.8,
+      "cause": "write path (slow commit ack)"
+    },
+    {
+      "run": "join 1/s A",
+      "at": "15:18:04",
+      "writes": 1,
+      "worst_ms": 302.6,
+      "worst_ack_ms": 36.2,
+      "cause": "update path"
+    },
+    {
+      "run": "join 1/s A",
+      "at": "15:18:09",
+      "writes": 2,
+      "worst_ms": 2251.1,
+      "worst_ack_ms": 443.2,
+      "cause": "write path (slow commit ack)"
+    },
+    {
+      "run": "join 1/s A",
+      "at": "15:18:17",
+      "writes": 1,
+      "worst_ms": 356.5,
+      "worst_ack_ms": 44.7,
+      "cause": "update path"
+    },
+    {
+      "run": "join 1/s B",
+      "at": "16:23:23",
+      "writes": 1,
+      "worst_ms": 1218.7,
+      "worst_ack_ms": 37.2,
+      "cause": "update path"
+    },
+    {
+      "run": "join 1/s B",
+      "at": "16:23:35",
+      "writes": 1,
+      "worst_ms": 1200.4,
+      "worst_ack_ms": 38.5,
+      "cause": "update path"
+    },
+    {
+      "run": "join 1/s B",
+      "at": "16:23:45",
+      "writes": 2,
+      "worst_ms": 1147.7,
+      "worst_ack_ms": 41.9,
+      "cause": "update path"
+    },
+    {
+      "run": "join 1/s B",
+      "at": "16:23:54",
+      "writes": 2,
+      "worst_ms": 568.3,
+      "worst_ack_ms": 40.2,
+      "cause": "update path"
+    },
+    {
+      "run": "join 1/s B",
+      "at": "16:24:45",
+      "writes": 1,
+      "worst_ms": 662.7,
+      "worst_ack_ms": 39.7,
+      "cause": "update path"
+    },
+    {
+      "run": "join 1/s B",
+      "at": "16:28:39",
+      "writes": 9,
+      "worst_ms": 6359.6,
+      "worst_ack_ms": 1068.3,
+      "cause": "write path (slow commit ack)"
+    },
+    {
+      "run": "join 1/s B",
+      "at": "16:32:10",
+      "writes": 1,
+      "worst_ms": 549,
+      "worst_ack_ms": 40.5,
+      "cause": "update path"
+    },
+    {
+      "run": "join 1/s B",
+      "at": "16:32:19",
+      "writes": 4,
+      "worst_ms": 3681.2,
+      "worst_ack_ms": 3629.5,
+      "cause": "write path (slow commit ack)"
+    },
+    {
+      "run": "join 1/s B",
+      "at": "16:32:35",
+      "writes": 5,
+      "worst_ms": 1541,
+      "worst_ack_ms": 1373.7,
+      "cause": "write path (slow commit ack)"
+    },
+    {
+      "run": "join 1/s B",
+      "at": "16:32:51",
+      "writes": 4,
+      "worst_ms": 3117.6,
+      "worst_ack_ms": 45,
+      "cause": "update path"
+    },
+    {
+      "run": "plain 100/s A",
+      "at": "15:51:14",
+      "writes": 1,
+      "worst_ms": 304.6,
+      "worst_ack_ms": 299.4,
+      "cause": "update path"
+    },
+    {
+      "run": "plain 100/s A",
+      "at": "15:51:44",
+      "writes": 1,
+      "worst_ms": 303.9,
+      "worst_ack_ms": 298.6,
+      "cause": "update path"
+    },
+    {
+      "run": "plain 10/s A",
+      "at": "15:35:35",
+      "writes": 11,
+      "worst_ms": 1357,
+      "worst_ack_ms": 44.2,
+      "cause": "server ended the live query session"
+    },
+    {
+      "run": "plain 10/s A",
+      "at": "15:36:10",
+      "writes": 9,
+      "worst_ms": 1599.2,
+      "worst_ack_ms": 43.3,
+      "cause": "update path"
+    },
+    {
+      "run": "plain 1/s B",
+      "at": "16:07:24",
+      "writes": 18,
+      "worst_ms": 13451.8,
+      "worst_ack_ms": 11008.4,
+      "cause": "write path (slow commit ack)"
+    },
+    {
+      "run": "plain 1/s B",
+      "at": "16:07:51",
+      "writes": 2,
+      "worst_ms": 1040.3,
+      "worst_ack_ms": 1036.2,
+      "cause": "write path (slow commit ack)"
+    },
+    {
+      "run": "plain 1/s B",
+      "at": "16:08:00",
+      "writes": 13,
+      "worst_ms": 2237.5,
+      "worst_ack_ms": 2231,
+      "cause": "write path (slow commit ack)"
+    },
+    {
+      "run": "plain 1/s B",
+      "at": "16:12:06",
+      "writes": 1,
+      "worst_ms": 321.3,
+      "worst_ack_ms": 33.6,
+      "cause": "server ended the live query session"
+    },
+    {
+      "run": "plain 1/s B",
+      "at": "16:13:37",
+      "writes": 1,
+      "worst_ms": 1008.8,
+      "worst_ack_ms": 36.2,
+      "cause": "update path"
+    }
+  ],
+  "session_losses": [
+    {
+      "run": "plain 10/s A",
+      "at": "15:35:35.811",
+      "code": "backend_session_lost"
+    },
+    {
+      "run": "join 10/s A",
+      "at": "15:46:05.689",
+      "code": "backend_session_lost"
+    },
+    {
+      "run": "aggregate 10/s A",
+      "at": "15:50:05.737",
+      "code": "backend_session_lost"
+    },
+    {
+      "run": "aggregate 1/s B",
+      "at": "15:55:05.820",
+      "code": "backend_session_lost"
+    },
+    {
+      "run": "aggregate 1/s B",
+      "at": "16:01:05.911",
+      "code": "backend_session_lost"
+    },
+    {
+      "run": "plain 1/s B",
+      "at": "16:12:06.046",
+      "code": "backend_session_lost"
+    },
+    {
+      "run": "aggregate 10/s B",
+      "at": "16:42:41.799",
+      "code": "backend_session_lost"
+    },
+    {
+      "run": "join 10/s B",
+      "at": "16:48:41.822",
+      "code": "backend_session_lost"
+    },
+    {
+      "run": "join 100/s B",
+      "at": "16:53:41.902",
+      "code": "backend_session_lost"
+    },
+    {
+      "run": "join 100/s B",
+      "at": "16:54:46.048",
+      "code": "heartbeat_timeout"
+    }
+  ]
+}
