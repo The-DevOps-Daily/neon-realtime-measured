@@ -4,7 +4,7 @@ A live order board on [Neon Realtime](https://neon.com/docs/realtime/overview) (
 
 Everything here ran against Lakebase Postgres 18 on Neon in `aws-eu-central-1`, with the Realtime SDK `@neon/realtime@0.1.0`. **Realtime is in beta and Neon publishes no benchmarks for it yet. Every number below is a beta number from one project and one client machine.**
 
-Write-up: _link added when the post is published_.
+Write-up: [Neon Realtime, Measured](https://devops-daily.com/posts/neon-realtime-live-queries-measured)
 
 ## Run it
 
